@@ -253,8 +253,8 @@ class ProductController extends Controller
         // ]);
         // $data = json_decode($response->getBody());
 
-        $product->code = $data->code;
-        $product->k_id = $data->id;
+        // $product->code = $data->code;
+        // $product->k_id = $data->id;
         $product->save();
         $imagesColor = ImageColor::whereProductId($product->id);
         foreach($imagesColor->get() as $color) {
