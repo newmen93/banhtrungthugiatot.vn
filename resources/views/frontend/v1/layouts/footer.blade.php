@@ -72,7 +72,7 @@
                             <aside id="text-10" class="widget clearfix widget_text">
                                 <div class="box-heading"><span>Fan Page</span></div>
                                 <div class="textwidget">
-                                        <address><a href={{$about['fanpage']}} target="_blank"><strong>danghanhnhanhre.com</strong></a><br>
+                                        <address><a href={{$about['fanpage']}} target="_blank"><strong>moonshop.local</strong></a><br>
                                     </address>
                                 </div>
                             </aside>
@@ -89,8 +89,8 @@
         <div class="inner">
             <div class="col-sm-12">
             <div class="copyright">
-                &copy; {{date('Y')}} <a href="#">danghanhnhanhre.com</a>
-                - Powered by <strong>Dat Hang Nhanh Re</strong>
+                &copy; {{date('Y')}} <a href="#">moonshop</a>
+                - Powered by <strong>MoonShop</strong>
                     - Develop by <a href="https://dkteam.tk">DKTEAM</a>
             </div>
             </div>
