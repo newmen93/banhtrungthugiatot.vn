@@ -1,9 +1,9 @@
 @extends('backend.v1.layouts.app')
 @section('button')
-    <button type="button" id="sync-customer" class="btn btn-success btn-sm m-btn--square m-btn--icon m-btn--icon-only"
+    {{-- <button type="button" id="sync-customer" class="btn btn-success btn-sm m-btn--square m-btn--icon m-btn--icon-only"
         title="Edit">
         <i class="fa fa-spinner"></i> Sync data
-    </button>
+    </button> --}}
     <button type="button" data-toggle="modal" data-target="#addCustomer" class="btn btn-primary btn-sm m-btn--square m-btn--icon m-btn--icon-only"
             title="Edit">
         <i class="fa fa-plus"></i> Thêm mới

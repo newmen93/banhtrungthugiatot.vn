@@ -68,7 +68,7 @@
                     {{-- <li class="{{setActive('create',3)}}"><a href="{{route('admin.customer.create')}}"><i class="fa fa-circle-o"></i> Thêm mới khách hàng</a></li> --}}
                 </ul>
             </li>
-            <li class="treeview {{setActive('shipping', 2)}}">
+            {{-- <li class="treeview {{setActive('shipping', 2)}}">
                 <a href="#">
                     <i class="fa fa-envelope"></i> <span>Phí vận chuyển</span>
                     <span class="pull-right-container">
@@ -77,9 +77,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{setActive('', 3)}}"><a href="{{route('admin.shipping.index')}}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
-                    {{-- <li class="{{setActive('create', 3)}}"><a href="{{route('admin.shipping.index')}}"><i class="fa fa-circle-o"></i> Tạo mới</a></li> --}}
                 </ul>
-            </li>
+            </li> --}}
             {{-- <li class="treeview {{setActive('report', 2)}}">
                 <a href="#">
                     <i class="fa fa-table"></i> <span>Thống kê</span>

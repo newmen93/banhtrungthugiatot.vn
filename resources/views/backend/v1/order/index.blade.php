@@ -1,10 +1,10 @@
 @extends('backend.v1.layouts.app')
 
 @section('button')
-<button type="button" id="sync-order" class="btn btn-success btn-sm m-btn--square m-btn--icon m-btn--icon-only"
+{{-- <button type="button" id="sync-order" class="btn btn-success btn-sm m-btn--square m-btn--icon m-btn--icon-only"
     title="Sync">
     <i class="fa fa-spinner"></i> Sync data
-</button>
+</button> --}}
 @stop
 
 @section('content')

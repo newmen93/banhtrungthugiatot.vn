@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.4/css/buttons.dataTables.min.css">
 @endpush
 @section('button')
-    <button type="button" id="sync-category" class="btn btn-success btn-sm m-btn--square m-btn--icon m-btn--icon-only"
+    {{-- <button type="button" id="sync-category" class="btn btn-success btn-sm m-btn--square m-btn--icon m-btn--icon-only"
         title="Edit">
         <i class="fa fa-spinner"></i> Sync data
-    </button>
+    </button> --}}
     <button type="button" data-toggle="modal" data-target="#confirmCreate" class="btn btn-primary btn-sm m-btn--square m-btn--icon m-btn--icon-only"
             title="Edit">
         <i class="fa fa-plus"></i> Thêm mới
