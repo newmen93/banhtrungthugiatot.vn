@@ -18,21 +18,21 @@ class Category extends Model
 
     public function children()
     {
-        return $this->hasMany(Category::class, 'parent_id', 'k_id');
+        return $this->hasMany(Category::class, 'parent_id', 'id');
     }
 
     public function parent()
     {
-        return $this->belongsTo(Category::class, 'k_id', 'parent_id');
+        return $this->belongsTo(Category::class, 'id', 'parent_id');
     }
 
     public function kparent()
     {
-        return $this->belongsTo(Category::class, 'id', 'k_id');
+        return $this->belongsTo(Category::class, 'id', 'id');
     }
     public function products()
     {
-        return $this->hasMany(Product::class, 'category_id','k_id');
+        return $this->hasMany(Product::class, 'category_id','id');
     }
 
 }

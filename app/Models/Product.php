@@ -20,7 +20,7 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id', 'k_id');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
     public function attributes()
@@ -30,7 +30,7 @@ class Product extends Model
     //return image color
     public function color()
     {
-        return $this->hasMany(ImageColor::class, 'product_id', 'k_id');
+        return $this->hasMany(ImageColor::class, 'product_id', 'id');
     }
 
     public function colorBy($color)

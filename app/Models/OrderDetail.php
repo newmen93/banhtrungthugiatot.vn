@@ -10,10 +10,10 @@ class OrderDetail extends Model
 {
     //
     public function order() {
-        return $this->belongsTo(Order::class, 'order_id', 'k_id');
+        return $this->belongsTo(Order::class, 'order_id', 'id');
     }
 
     public function product() {
-        return $this->hasOne(Product::class, 'k_id', 'product_id');
+        return $this->hasOne(Product::class, 'id', 'product_id');
     }
 }
