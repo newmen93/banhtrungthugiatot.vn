@@ -1,0 +1,95 @@
+.tp-caption a {
+color:#fff;
+text-shadow:none;
+-webkit-transition:all .2s ease-out;
+-moz-transition:all .2s ease-out;
+-o-transition:all .2s ease-out;
+-ms-transition:all .2s ease-out;
+text-transform:uppercase;
+}
+
+.tp-caption a:hover {
+color:#ffa902;
+}
+
+.a_custom_style1 {
+color:#fff;
+font-size:14px;
+line-height:29px;
+font-family:Lato;
+text-decoration:none;
+text-transform:uppercase;
+background-color:transparent;
+letter-spacing:2px;
+border-color:#fff;
+border-style:none;
+border-width:0;
+}
+
+.tp-caption.a_custom_style2,.a_custom_style2 {
+color:#fff;
+font-size:40px;
+line-height:35px;
+font-weight:900;
+font-family:Lato;
+text-decoration:none;
+background-color:transparent;
+text-transform:uppercase;
+border-color:#fff;
+border-style:none;
+border-width:0;
+}
+
+.tp-caption.a_custom_style3,.a_custom_style3 {
+font-size:14px;
+line-height:20px;
+font-family:"Noticia Text",serif;
+color:#fff;
+text-decoration:none;
+background-color:transparent;
+text-align:center;
+border-color:#fff;
+border-style:none;
+border-width:0;
+}
+
+.tp-caption.tp-button,.tp-button {
+color:#666;
+background-color:transparent;
+font-size:11px;
+line-height:40px;
+font-family:Lato;
+font-weight:700;
+text-decoration:none;
+height:42px;
+cursor:pointer;
+letter-spacing:3px;
+text-transform:uppercase;
+transition:all .4s ease 0;
+border-radius:2px 2px 2px 2px;
+border-color:#222;
+border-style:solid;
+border-width:0;
+padding:0 10px;
+}
+
+.tp-caption.tp-button:hover,.tp-button:hover {
+font-size:11px;
+line-height:40px;
+font-family:Lato;
+font-weight:700;
+color:#fff;
+text-decoration:none;
+height:42px;
+cursor:pointer;
+letter-spacing:3px;
+text-transform:uppercase;
+transition:all .4s ease 0;
+-webkit-transition:all .4s ease 0;
+background-color:rgba(102,102,102,1);
+border-radius:2px 2px 2px 2px;
+border-color:#666;
+border-style:solid;
+border-width:1px;
+padding:0 10px;
+}
