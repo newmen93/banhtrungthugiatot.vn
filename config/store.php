@@ -5,4 +5,4 @@ return [
     "name" => "shopname",
     "number" => "number"
 
-]
+];
