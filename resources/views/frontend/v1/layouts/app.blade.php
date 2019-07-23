@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-	 <title>{{ config('kiot.name', 'Đặt Hàng Nhanh Rẻ') }}</title>
+	 <title>{{ config('kiot.name', 'Moonshop.local') }}</title>
     <meta name="keywords" content="Đặt hàng nhanh rẻ,dat hang nhanh re,nhanh rẻ,tiện lợi,nhanh re,đồ gia dụng,đồ handmade,phụ kiện nhà bếp,đồ linh tinh,phụ kiện trang trí" />
     <meta name="description" content="Shop online bán các mặt hàng nhỏ xinh, phụ kiện nhà bếp..." />
     <meta property="og:title" content="Dathangnhanhre.com - Đặt Hàng Nhanh Rẻ" />

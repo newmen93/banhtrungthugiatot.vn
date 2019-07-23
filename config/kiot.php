@@ -2,16 +2,16 @@
 
 return [
 
-    'name' => 'Đặt Hàng Nhanh Rẻ | www.dathangnhanhre.com',
+    'name' => 'MoonShop | www.moonshop.local',
     'order_status' => [
-        "order_success"=> [
-            "id"=> 1,
-            "paid"=>null
+        "order_success" => [
+            "id" => 1,
+            "paid" => null,
         ],
-        "shipping"=>4,
-        "done"=>[
-            "id"=>5,
-            "paid"=>null
+        "shipping" => 4,
+        "done" => [
+            "id" => 5,
+            "paid" => null,
         ],
 
     ],
