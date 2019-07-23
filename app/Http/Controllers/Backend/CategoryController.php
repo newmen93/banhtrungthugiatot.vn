@@ -148,7 +148,7 @@ class CategoryController extends Controller
         // $data = json_decode($response->getBody());
         $category            = new Category();
         $category->name      = $request->name;
-        $category->k_id      = $data->data->categoryId;
+        // $category->k_id      = $data->data->categoryId;
         $category->parent_id = $request->parent;
         $category->priority  = $request->priority;
         $category->save();
