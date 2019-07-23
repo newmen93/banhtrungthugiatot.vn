@@ -130,22 +130,22 @@ class CategoryController extends Controller
         /**
          * call kiot api new category
          */
-        $data = [
-            'categoryName' => $request->name
-        ];
-        if($request->parent) {
-            array_push($data,['parentId'=>$request->parent]);
-        }
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $response = $client->post('https://public.kiotapi.com/categories', [
-            RequestOptions::JSON => $data
-        ]);
-        $data = json_decode($response->getBody());
+        // $data = [
+        //     'categoryName' => $request->name
+        // ];
+        // if($request->parent) {
+        //     array_push($data,['parentId'=>$request->parent]);
+        // }
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $response = $client->post('https://public.kiotapi.com/categories', [
+        //     RequestOptions::JSON => $data
+        // ]);
+        // $data = json_decode($response->getBody());
         $category            = new Category();
         $category->name      = $request->name;
         $category->k_id      = $data->data->categoryId;
@@ -194,19 +194,19 @@ class CategoryController extends Controller
         /**
          * todo call api update category
          */
-        $data = [
-            'categoryName' => $request->name,
-            'parentId'     => $request->parent
-        ];
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $response = $client->put('https://public.kiotapi.com/categories/' . $category->k_id, [
-            RequestOptions::JSON => $data
-        ]);
+        // $data = [
+        //     'categoryName' => $request->name,
+        //     'parentId'     => $request->parent
+        // ];
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $response = $client->put('https://public.kiotapi.com/categories/' . $category->k_id, [
+        //     RequestOptions::JSON => $data
+        // ]);
 
         $category->name = $request->name;
         $category->parent_id =$request->parent;
@@ -236,15 +236,15 @@ class CategoryController extends Controller
         /**
          * todo: call api kio delte category
          */
-        if (!$category->k_id) {
-            $client = new Client([
-                'headers' => [
-                    'Retailer'      => 'phukiengiadung',
-                    'Authorization' => 'Bearer ' . Session::get('access_token')
-                ]
-            ]);
-            $request = $client->delete('https://public.kiotapi.com/categories/' . $category->k_id);
-        }
+        // if (!$category->k_id) {
+        //     $client = new Client([
+        //         'headers' => [
+        //             'Retailer'      => 'phukiengiadung',
+        //             'Authorization' => 'Bearer ' . Session::get('access_token')
+        //         ]
+        //     ]);
+        //     $request = $client->delete('https://public.kiotapi.com/categories/' . $category->k_id);
+        // }
         $category->delete();
         return response()->json(['status'=> 200,'msg'=>'Xóa thành công']);
     }
