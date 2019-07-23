@@ -46,7 +46,7 @@ class OrderController extends Controller
                                 ->first();
             if(null == $member) {
                 //new customer kioutviet get customer id on kiot
-                $response = $this->saveCustomerTokiot($req);
+                //$response = $this->saveCustomerTokiot($req);
                 $member = new Customer;
                 $member->name = $req->name;
                 //$member->k_id = $response->id; //gan id cua kiot  cho id cua dhnr
@@ -64,13 +64,13 @@ class OrderController extends Controller
                 $member->address = $req->address;
                 $member->save();
             }
-            $surchages = $this->createSurChages($req);
+            // $surchages = $this->createSurChages($req);
             //get order id on kiot viet to save my db
-            $order_return = $this->saveOrderToKiot($req, $member, $cart, $surchages);
+            // $order_return = $this->saveOrderToKiot($req, $member, $cart, $surchages);
             // insert into table order
             $order = new Order;
-            $order->k_id = $order_return->id;
-            $order->code = $order_return->code;
+            // $order->k_id = $order_return->id;
+            // $order->code = $order_return->code;
             $order->customer_name = $member->name;
             $order->customer_id = $member->k_id;
             $order->customer_code = $member->code;

@@ -235,18 +235,18 @@ class OrderController extends Controller
         /**
          * call api change status or update order here
          */
-        $data = [
-            'name' => $customer->name
-        ];
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $request = $client->post('https://public.kiotapi.com/customers', [
-            RequestOptions::JSON => $data
-        ]);
+        // $data = [
+        //     'name' => $customer->name
+        // ];
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $request = $client->post('https://public.kiotapi.com/customers', [
+        //     RequestOptions::JSON => $data
+        // ]);
         //dd(json_decode($request->getBody()));
         return response()->json(['status'=>200]);
     }
