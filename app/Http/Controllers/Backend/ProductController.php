@@ -225,33 +225,33 @@ class ProductController extends Controller
         /**
          * call api kiot viet new Product
          */
-        $data = [
-            'name' => $prdReq['product_name'],
-            'categoryId'     => $prdReq['product_category'],
-            'fullName'=> $prdReq['product_name'],
-            'description'=> $prdReq['description'],
-            'unit'=>$prdReq['basic_unit'],
-            'inventories' => [
-                [
-                    "branchId"=> 38930,
-                    "branchName"=>0,
-                    "onHand"=>$prdReq['total_quantity'],
-                    "cost"=>$prdReq['cost'],
-                    "reserved"=>0
-                ]
-            ]
-            //TODO: list image hinh
-        ];
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $response = $client->post('https://public.kiotapi.com/products', [
-            RequestOptions::JSON => $data
-        ]);
-        $data = json_decode($response->getBody());
+        // $data = [
+        //     'name' => $prdReq['product_name'],
+        //     'categoryId'     => $prdReq['product_category'],
+        //     'fullName'=> $prdReq['product_name'],
+        //     'description'=> $prdReq['description'],
+        //     'unit'=>$prdReq['basic_unit'],
+        //     'inventories' => [
+        //         [
+        //             "branchId"=> 38930,
+        //             "branchName"=>0,
+        //             "onHand"=>$prdReq['total_quantity'],
+        //             "cost"=>$prdReq['cost'],
+        //             "reserved"=>0
+        //         ]
+        //     ]
+        //     //TODO: list image hinh
+        // ];
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $response = $client->post('https://public.kiotapi.com/products', [
+        //     RequestOptions::JSON => $data
+        // ]);
+        // $data = json_decode($response->getBody());
 
         $product->code = $data->code;
         $product->k_id = $data->id;
@@ -368,32 +368,32 @@ class ProductController extends Controller
         /**
          * call api kiot viet new Product
          */
-        $data = [
-            'name' => $prdReq['product_name'],
-            'categoryId'     => $prdReq['product_category'],
-            'fullName'=> $prdReq['product_name'],
-            'description'=> $prdReq['description'],
-            'unit'=>$prdReq['basic_unit'],
-            'inventories' => [
-                [
-                    "branchId"=> 38930,
-                    "branchName"=>0,
-                    "onHand"=>$prdReq['total_quantity'],
-                    "cost"=>$prdReq['cost'],
-                    "reserved"=>0
-                ]
-            ]
-            //TODO: list image hinh
-        ];
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $response = $client->put('https://public.kiotapi.com/products/' . $product->k_id, [
-            RequestOptions::JSON => $data
-        ]);
+        // $data = [
+        //     'name' => $prdReq['product_name'],
+        //     'categoryId'     => $prdReq['product_category'],
+        //     'fullName'=> $prdReq['product_name'],
+        //     'description'=> $prdReq['description'],
+        //     'unit'=>$prdReq['basic_unit'],
+        //     'inventories' => [
+        //         [
+        //             "branchId"=> 38930,
+        //             "branchName"=>0,
+        //             "onHand"=>$prdReq['total_quantity'],
+        //             "cost"=>$prdReq['cost'],
+        //             "reserved"=>0
+        //         ]
+        //     ]
+        //     //TODO: list image hinh
+        // ];
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $response = $client->put('https://public.kiotapi.com/products/' . $product->k_id, [
+        //     RequestOptions::JSON => $data
+        // ]);
         //return back()->with('success', 'Lưu thành công!');
         return response()->json(['status'=>200]);
     }
@@ -407,7 +407,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
-        //todo: unlink image and delete image color size
         $imageColors = $product->color;
         $imageColors->each(function ($color, $key) {
             $color->size->each(function ($size, $i) {
@@ -422,13 +421,13 @@ class ProductController extends Controller
         /**
          * todo delte product call api kiotviet
          */
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $request = $client->delete('https://public.kiotapi.com/products/' . $kId);
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $request = $client->delete('https://public.kiotapi.com/products/' . $kId);
         
         return response()->json(['status'=>200]);
     }

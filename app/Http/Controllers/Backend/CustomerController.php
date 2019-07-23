@@ -141,24 +141,24 @@ class CustomerController extends Controller
         /**
          * call api kv to new customer
          */
-        $data = [
-            "branchId"=> 38930,
-            "name" => $request->name,
-            //"contactNumber"=> $request->phone,
-            "address" => $request->address,
-            //"email"=> $request->email,
-            "comment" => $request->note
-        ];
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $response = $client->post('https://public.kiotapi.com/customers', [
-            RequestOptions::JSON => $data
-        ]);
-        $data = json_decode($response->getBody());
+        // $data = [
+        //     "branchId"=> 38930,
+        //     "name" => $request->name,
+        //     //"contactNumber"=> $request->phone,
+        //     "address" => $request->address,
+        //     //"email"=> $request->email,
+        //     "comment" => $request->note
+        // ];
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $response = $client->post('https://public.kiotapi.com/customers', [
+        //     RequestOptions::JSON => $data
+        // ]);
+        // $data = json_decode($response->getBody());
         /**
          * [$customer description]
          * todo: need to validate
@@ -219,24 +219,24 @@ class CustomerController extends Controller
         /**
          * todo call kiot api to update customer
          */
-        $data = [
-            "branchId"=> 38930,
-            "name" => $request->name,
-            //"contactNumber"=> $request->phone,
-            "address" => $request->address,
-            //"email"=> $request->email,
-            "comment" => $request->note
-        ];
+        // $data = [
+        //     "branchId"=> 38930,
+        //     "name" => $request->name,
+        //     //"contactNumber"=> $request->phone,
+        //     "address" => $request->address,
+        //     //"email"=> $request->email,
+        //     "comment" => $request->note
+        // ];
 
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $response = $client->put('https://public.kiotapi.com/customers/' .  $customer->k_id, [
-            RequestOptions::JSON => $data
-        ]);
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $response = $client->put('https://public.kiotapi.com/customers/' .  $customer->k_id, [
+        //     RequestOptions::JSON => $data
+        // ]);
         return response()->json(['status'=>200]);
     }
 
@@ -252,16 +252,16 @@ class CustomerController extends Controller
         /**
          * todo call apikiot to delete customer
          */
-        $data = [
-            'id' => $customer->k_id
-        ];
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $request = $client->delete('https://public.kiotapi.com/customers/' . $customer->k_id);
+        // $data = [
+        //     'id' => $customer->k_id
+        // ];
+        // $client = new Client([
+        //     'headers' => [
+        //         'Retailer'      => 'phukiengiadung',
+        //         'Authorization' => 'Bearer ' . Session::get('access_token')
+        //     ]
+        // ]);
+        // $request = $client->delete('https://public.kiotapi.com/customers/' . $customer->k_id);
         $customer->delete();
         return response()->json(['status'=> 200]);
 
