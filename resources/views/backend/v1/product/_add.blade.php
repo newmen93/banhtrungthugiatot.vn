@@ -38,7 +38,7 @@
                                     <option value="">None</option>
 
                                     @foreach ($categories as $cate)
-                                        <option value="{{$cate->k_id}}">{{$cate->name}}</option>
+                                        <option value="{{$cate->id}}">{{$cate->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
