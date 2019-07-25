@@ -33,6 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('frontend.v2.home');
         // get product new
         $newProducts = Product::whereIsNew(1)->paginate(self::$itemsPerPage);
 

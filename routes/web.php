@@ -16,6 +16,7 @@ Route::any('/404', function() {
 ############################### FRONTEND ROUTE ############################################
 # Guest route for frontend
 Route::get('/','Frontend\HomeController@index')->name('home');
+
 Route::get('trang-chu','Frontend\HomeController@index');
 Route::get('gio-hang','Frontend\CartController@index');
 Route::get('thanh-toan','Frontend\CartController@payment');
