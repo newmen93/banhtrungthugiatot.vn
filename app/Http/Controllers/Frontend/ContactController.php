@@ -36,6 +36,8 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        echo json_encode(1);die;
+        dd($request);
         $contact = new Contact;
         $contact->name = $request->input('name');
         $contact->email = $request->input('email');

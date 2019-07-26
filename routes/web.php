@@ -20,7 +20,11 @@ Route::get('/','Frontend\HomeController@index')->name('home');
 Route::get('trang-chu','Frontend\HomeController@index');
 Route::get('gio-hang','Frontend\CartController@index');
 Route::get('thanh-toan','Frontend\CartController@payment');
-
+Route::get('lien-he','Frontend\HomeController@contact')->name('contact');
+Route::post('lien-he','Frontend\ContactController@store')->name('store.contact');
+Route::get('bao-gia','Frontend\HomeController@price')->name('price');
+Route::get('gioi-thieu','Frontend\HomeController@about')->name('about');
+Route::get('tin-tuc','Frontend\HomeController@post')->name('post');
 # User route for frontend auth
 Route::group([
     'namespace' => 'Frontend\Auth',
@@ -210,94 +214,3 @@ Route::group([
 
 });
 
-
-#################test api in web################
-use GuzzleHttp\Client;
-use GuzzleHttp\RequestOptions;
-Route::get('/test/api',function(){
-
-    $data = [
-        "pageSize" => 100,
-        "orderBy" => "id",
-        "orderDirection" =>"desc"
-    ];
-    $client = new Client([
-        'headers' => [
-            'Retailer'      => 'phukiengiadung',
-            'Authorization' => 'Bearer ' . Session::get('access_token')
-        ]
-    ]);
-    $request = $client->get('https://public.kiotapi.com/orders',[
-        RequestOptions::JSON => $data
-    ]);
-    $data = $request->getBody();
-    dd(json_decode($data));
-    $data = [
-        "branchId"=> 38930, //dm cai nay require khi post data
-        "soldById"=>80879,
-        "cashierId"=>80882,
-        "discount"=>0.0,
-        "description"=>"day la ghi chu",
-        "method"=>"chuyen khoan",
-        "totalPayment"=> 0.0,
-        "makeInvoice"=>false,
-        "orderDetails" => [
-            [
-                "productId"=> 3587832,
-                "productCode"=> "12",
-                "productName"=>"ten hang 1 (goi)",
-                "quantity"=> 1,
-                "price"=> 29999.0,
-                "discount"=> 0.0,
-                "discountRatio"=> 0
-            ]
-        ],
-        "customer"=>[
-            "id"=> 1195906,
-            "code"=> "KH000009",
-            "name"=>"nguyen hue"
-        ]
-    ];
-
-
-    //dd(Session::get('access_token'));
-    $dt = [
-        'categoryName'=>'Danh muc api41'
-    ];
-    $client = new Client([
-        'headers' => [
-            'Retailer' => 'phukiengiadung',
-            'Authorization' => 'Bearer ' . Session::get('access_token')
-        ]
-    ]);
-    //GuzzleHttp\RequestOptions::JSON
-    $request = $client->post('https://public.kiotapi.com/orders', [
-        GuzzleHttp\RequestOptions::JSON => $data
-    ]);
-    dd(json_decode($request->getBody()));
-    //dd(GuzzleHttp\RequestOptions::JSON)
-    $request = $client->post('https://public.kiotapi.com/orders', [
-       GuzzleHttp\RequestOptions::JSON => $data
-    ]);
-    dd($request);
-    //$data =  $request->getBody()->read(1024);
-    dd(json_decode($data));
-    dd($_COOKIE['access_token']);
-    $data = [
-        'orderBy' => 'name'
-    ];
-    $client = new Client();
-    //$client->setDefaultOption('headers', $headers);
-    $url1 = 'https://public.kiotapi.com/categories';
-    $request = $client->get($url, [
-        'headers' => config('kiot.headers'),
-        GuzzleHttp\RequestOptions::JSON => $data
-    ]);
-    $data = $request->getBody();
-    dd(json_decode($data));
-    $code = $response->getStatusCode();
-    dd($code);
-
-    dd($response);
-    dd('dm no test thi dc');
-});

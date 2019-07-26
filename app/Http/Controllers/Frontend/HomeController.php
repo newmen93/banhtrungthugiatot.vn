@@ -56,11 +56,19 @@ class HomeController extends Controller
     }
     public function about()
     {
-        return view('frontend.v1.about');
+        return view('frontend.v2.about');
     }
     public function contact()
     {
-        return view('frontend.v1.contact');
+        return view('frontend.v2.contact');
+    }
+    public function price()
+    {
+        return view('frontend.v2.price');
+    }
+    public function post()
+    {
+        return view('frontend.v2.post');
     }
     public function shopLocator()
     {
