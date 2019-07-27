@@ -40,13 +40,13 @@
                               <div class="menu-social-icons">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-behance"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-youtube"></i></a>
                             </div>	    				  					
                               </div>
                               <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
-                                <a class="btns" href="tel:+953 012 3654 896">+953 012 3654 896</a>
-                                  <a class="btns" href="mailto:support@colorlib.com">support@colorlib.com</a>		
+                                <a class="btns" href="tel:+953 012 3654 896">+84 012 3654 896</a>
+                                  <a class="btns" href="mailto:support@colorlib.com">info@banhtrungthunhalam.com</a>		
                                   <a class="icons" href="tel:+953 012 3654 896">
                                       <span class="lnr lnr-phone-handset"></span>
                                   </a>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="container main-menu">
                     <div class="row align-items-center justify-content-between d-flex">
-                        <a href="index.html"><img src="{{asset('frontend/v2/img/logo.png')}}" alt="" title="" /></a>		
+                        <a href="{{route('home')}}"><img src="{{asset('frontend/v2/img/logo.png')}}" alt="" title="" /></a>		
                         <nav id="nav-menu-container">
                             <ul class="nav-menu">
                               <li class="menu-active"><a href="{{route('home')}}">Trang chủ</a></li>
@@ -123,8 +123,8 @@
                                 <div class="footer-social d-flex align-items-center">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#"><i class="fa fa-youtube"></i></a>
                                 </div>
                             </div>
                         </div>	

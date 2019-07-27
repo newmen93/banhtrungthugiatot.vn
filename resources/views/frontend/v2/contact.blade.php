@@ -9,7 +9,7 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Liên hệ với chúng tôi
+                    Liên hệ chúng tôi
                 </h1>	
                 <p class="text-white link-nav"><a href="index.html">Trang chủ </a>  <span class="lnr lnr-arrow-right"></span>  <a href="contact.html"> Liên hệ</a></p>
             </div>	
@@ -52,21 +52,21 @@
                         <h5>support@colorlib.com</h5>
                         <p>Send us your query anytime!</p>
                     </div>
-                </div>														
+                </div>
             </div>
             <div class="col-lg-8">
                 <form class="form-area" id="myForm" action="{{route('store.contact')}}" method="post" class="contact-form text-right">
                     <div class="row">	
                         <div class="col-lg-6 form-group">
                             @csrf
-                            <input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+                            <input name="name" placeholder="Tên" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên'" class="common-input mb-20 form-control" required="" type="text">
                         
-                            <input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+                            <input name="email" placeholder="Địa chỉ email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Địa chỉ email'" class="common-input mb-20 form-control" required="" type="email">
 
-                            <input name="subject" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" required="" type="text">
+                            <input name="subject" placeholder="Tiêu đề" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tiêu đề'" class="common-input mb-20 form-control" required="" type="text">
                         </div>
                         <div class="col-lg-6 form-group">
-                            <textarea class="common-textarea form-control" name="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>				
+                            <textarea class="common-textarea form-control" name="message" placeholder="Nội dung" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nội dung'" required=""></textarea>				
                         </div>
                         <div class="col-lg-12">
                             <div class="alert-msg" style="text-align: left;"></div>

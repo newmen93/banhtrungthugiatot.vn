@@ -19,6 +19,9 @@ $(document).ready(function () {
             },
             success: function (data) {
                 alert.html(data).fadeIn(); // fade in response data
+                setTimeout(function () {
+                    alert.html("");
+                }, 5000);
                 form.trigger('reset'); // reset form
                 submit.attr("style", "display: none !important");; // reset submit button text
             },

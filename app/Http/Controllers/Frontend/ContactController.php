@@ -36,15 +36,16 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        echo json_encode(1);die;
-        dd($request);
+       
         $contact = new Contact;
         $contact->name = $request->input('name');
+        $contact->subject = $request->input('subject');
         $contact->email = $request->input('email');
         $contact->phone = $request->input('phone');
         $contact->message = $request->input('message');
         $contact->save();
-        return response()->json(['status' => 200, 'message' => 'ok']);
+        echo json_encode("Chúng tôi sẽ phản hồi sớm nhất có thể.");
+        die;
     }
 
     /**

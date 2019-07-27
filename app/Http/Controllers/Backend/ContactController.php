@@ -16,6 +16,7 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::all();
+        return view('backend.v1.contact.index', ['contacts' => $contacts]);
     }
     public function dataTable(Request $request)
     {

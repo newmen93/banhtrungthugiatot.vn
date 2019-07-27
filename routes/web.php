@@ -121,6 +121,17 @@ Route::group([
         Route::post('/update/{id}', 'CategoryController@update')->name('update');
         Route::delete('/delete/{id}', 'CategoryController@destroy')->name('delete');
     });
+    # Product Contact
+    Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
+        Route::get('/', 'ContactController@index')->name('index');
+        Route::post('/table', 'ContactController@dataTable')->name('table');
+        Route::get('/create', 'ContactController@create')->name('create');
+        Route::post('/store', 'ContactController@store')->name('store');
+        Route::post('/sync', 'ContactController@sync')->name('sync');
+        Route::get('/edit/{id}', 'ContactController@edit')->name('edit');
+        Route::post('/update/{id}', 'ContactController@update')->name('update');
+        Route::delete('/delete/{id}', 'ContactController@destroy')->name('delete');
+    });
     # Product Route
     Route::group(['prefix' => 'product', 'as' => 'product.'], function () {
         Route::get('/', 'ProductController@index')->name('index');
