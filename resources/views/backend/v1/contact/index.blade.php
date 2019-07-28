@@ -18,12 +18,12 @@
             </ul>
             <div class="tab-content">
                 <div class="activetab-pane" id="settings">
-                    <table class="table table-hover" id="category-tb" class="display" style="width:100%">
+                    <table class="table table-hover" id="contact-tb" class="display" style="width:100%">
                         <thead>
                         <tr>
                             <th>Tên danh mục</th>
-                            <th>Danh mục cha</th>
-                            <th>Ưu tiên</th>
+                            <th>Chủ đề</th>
+                            <th>Nội dung</th>
                             <th>Hành động</th>
                         </tr>
                         </thead>
@@ -88,7 +88,7 @@
                 }
             });
         });
-        $('#category-tb').DataTable({
+        $('#contact-tb').DataTable({
             dom: 'Bfrtip',
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'
@@ -99,15 +99,15 @@
             serverSide: true,
             processing: true,
             ajax: {
-                url:"{{route('admin.category.table')}}",
+                url:"{{route('admin.contact.table')}}",
                 dataType:"json",
                 type:"POST",
                 data:{"_token":"<?=csrf_token() ?>"}
             },
             columns: [
-                {data: 'name',searchable: true},
-                {data: 'parent'},
-                {data: 'priority', orderable: false},
+                {data: 'name', searchable: true},
+                {data: 'subject'},
+                {data: 'message', orderable: false},
                 {data: 'action'}
             ]
 

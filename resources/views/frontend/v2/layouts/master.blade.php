@@ -46,7 +46,7 @@
                               </div>
                               <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
                                 <a class="btns" href="tel:+953 012 3654 896">+84 012 3654 896</a>
-                                  <a class="btns" href="mailto:support@colorlib.com">info@banhtrungthunhalam.com</a>		
+                                  <a class="btns" href="mailto:support@colorlib.com">info@banhtrungthu2019.vn</a>		
                                   <a class="icons" href="tel:+953 012 3654 896">
                                       <span class="lnr lnr-phone-handset"></span>
                                   </a>
@@ -66,7 +66,7 @@
                               <li><a href="{{route('about')}}">Giới thiệu</a></li>
                               <li><a href="{{route('post')}}">Tin tức</a></li>
                               <li><a href="{{route('price')}}">Báo giá</a></li>
-                              <li class="menu-has-children"><a href="">Blog</a>
+                              {{-- <li class="menu-has-children"><a href="">Blog</a>
                                 <ul>
                                   <li><a href="blog-home.html">Blog Home</a></li>
                                   <li><a href="blog-single.html">Blog Single</a></li>
@@ -77,8 +77,8 @@
                                     </ul>
                                   </li>					              
                                 </ul>
-                              </li>
-                              <li><a href="elements.html">Elements</a></li>							  			          	          
+                              </li> --}}
+                              {{-- <li><a href="elements.html">Elements</a></li>							  			          	           --}}
                               <li><a href="{{route('contact')}}">Liên hệ</a></li>
                             </ul>
                         </nav><!-- #nav-menu-container -->		
@@ -96,7 +96,7 @@
                             <div class="single-footer-widget">
                                 <h6>Giới thiệu</h6>
                                 <p>
-                                    If you own an Iphone, you’ve probably already worked out how much fun it is to use it to watch movies-it has that.
+                                    Bánh trung thu 2019, banhtrungthu2019.vn
                                 </p>							
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                         </div>	
                         <div class="col-lg-12">
                             <p class="footer-text">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://dkteam.tk" target="_blank">DKTEAM</a></p>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> <br>banhtrungthu2019.vn | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://dkteam.tk" target="_blank">DKTEAM</a></p>
                         </div>
                     </div>
                 </div>

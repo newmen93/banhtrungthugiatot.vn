@@ -22,39 +22,39 @@ class ContactController extends Controller
     {
         $columns = [
             0 => "name",
-            1 => "parent",
-            2 => "priority",
+            1 => "subject",
+            2 => "message",
             3 => "action"
         ];
 
-        $totalData = Category::count();
+        $totalData = Contact::count();
         $limit     = intval($request->input('length'));
         $start     = intval($request->input('start'));
         $order     = $columns[$request->input('order.0.column')];//default order by column 0
         $dir       = $request->input('order.0.dir');
 
         if(empty($request->input('search.value'))){
-            $post = Category::offset($start)
+            $post = Contact::offset($start)
                 ->take($limit)
                 ->orderBy($order, $dir)
                 ->get();
-            $totalFiltered = Category::count();
+            $totalFiltered = Contact::count();
         }else{
             $search = $request->input('search.value');
-            $post = Category::where('name', 'like', "%{$search}%")
+            $post = Contact::where('name', 'like', "%{$search}%")
                 ->offset($start)
                 ->limit($limit)
                 ->orderBy($order,$dir)
                 ->get();
-            $totalFiltered = Category::where('name','like',"%{$search}%")->count();
+            $totalFiltered = Contact::where('name','like',"%{$search}%")->count();
         }
         $action = '<a href="#" data-id="{id}" class="btn btn-sm btn-primary btn-edit"><i class="fa fa-edit"></i> Sửa</a> <a href="#" data-id="{id}" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i> Xóa</a>';
         $data = array();
         if($post){
             foreach($post as $r){
                 $nestedData['name']        = $r->name;
-                $nestedData['parent']      = $r->parent ? $r->parent->name : "------------";
-                $nestedData['priority']    = $r->priority;
+                $nestedData['subject']      = $r->subject?$r->subject:"";
+                $nestedData['message']    = $r->message?$r->message:"";
                 $nestedData['action']      = str_replace('{id}', $r->id, $action);
                 $nestedData["DT_RowId"]    = $r->id;
                 $nestedData["DT_RowClass"] = "Kiot".$r->id;

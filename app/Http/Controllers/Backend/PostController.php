@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Freshbitsweb\Laratables\Laratables;
@@ -19,78 +19,45 @@ class PostController extends Controller
      */
     public function index()
     {
-        $categories = Category::whereParentId(0)->get();
-        return view('backend.v1.category.index',[
-            'categories' => $categories
-        ]);
-    }
-    public function sync()
-    {
-        $client = new Client([
-            'headers' => [
-                'Retailer'      => 'phukiengiadung',
-                'Authorization' => 'Bearer ' . Session::get('access_token')
-            ]
-        ]);
-        $response = $client->get('https://public.kiotapi.com/categories', [
-            RequestOptions::JSON => [
-                'pageSize' => 1000
-            ]
-        ]);
-        $data = $response->getBody();
-        $categories = json_decode($data)->data;
-
-        foreach ($categories as $category) {
-            $cate = Category::where('k_id', $category->categoryId)->first();
-            if(!$cate){
-                $new = new Category();
-                $new->name =$category->categoryName;
-                $new->k_id = $category->categoryId;
-                if(isset($category->parentId)){
-                    $new->parent_id = $category->parentId;
-                }
-                $new->save();
-            }
-        }
-        echo json_encode(1);
+        return view('backend.v1.post.index');
     }
     public function dataTable(Request $request)
     {
         $columns = [
-            0 => "name",
-            1 => "parent",
-            2 => "priority",
+            0 => "title",
+            1 => "title",
+            2 => "title",
             3 => "action"
         ];
 
-        $totalData = Category::count();
+        $totalData = Post::count();
         $limit     = intval($request->input('length'));
         $start     = intval($request->input('start'));
         $order     = $columns[$request->input('order.0.column')];//default order by column 0
         $dir       = $request->input('order.0.dir');
 
         if(empty($request->input('search.value'))){
-            $post = Category::offset($start)
+            $post = Post::offset($start)
                 ->take($limit)
                 ->orderBy($order, $dir)
                 ->get();
-            $totalFiltered = Category::count();
+            $totalFiltered = Post::count();
         }else{
             $search = $request->input('search.value');
-            $post = Category::where('name', 'like', "%{$search}%")
+            $post = Post::where('name', 'like', "%{$search}%")
                 ->offset($start)
                 ->limit($limit)
                 ->orderBy($order,$dir)
                 ->get();
-            $totalFiltered = Category::where('name','like',"%{$search}%")->count();
+            $totalFiltered = Post::where('name','like',"%{$search}%")->count();
         }
         $action = '<a href="#" data-id="{id}" class="btn btn-sm btn-primary btn-edit"><i class="fa fa-edit"></i> Sửa</a> <a href="#" data-id="{id}" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i> Xóa</a>';
         $data = array();
         if($post){
             foreach($post as $r){
-                $nestedData['name']        = $r->name;
-                $nestedData['parent']      = $r->parent ? $r->parent->name : "------------";
-                $nestedData['priority']    = $r->priority;
+                $nestedData['title']        = $r->title;
+                $nestedData['title']      = $r->title;
+                $nestedData['title']    = $r->title;
                 $nestedData['action']      = str_replace('{id}', $r->id, $action);
                 $nestedData["DT_RowId"]    = $r->id;
                 $nestedData["DT_RowClass"] = "Kiot".$r->id;

@@ -59,18 +59,28 @@
                     <li class="{{setActive('',3)}}"><a href="{{route('admin.customer.index')}}"><i class="fa fa-circle-o"></i> Danh sách khách hàng</a></li>
                 </ul>
             </li>
-            <li class="treeview {{setActive('shipping', 2)}}">
+            <li class="treeview {{setActive('post', 2)}}">
                 <a href="#">
-                    <i class="fa fa-envelope"></i> <span>Bài viết</span>
+                    <i class="fa fa-pencil-square-o"></i> <span>Bài viết</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{setActive('', 3)}}"><a href="{{route('admin.shipping.index')}}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+                    <li class="{{setActive('', 3)}}"><a href="{{route('admin.post.index')}}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
                 </ul>
             </li>
-           
+            <li class="treeview {{setActive('contact', 2)}}">
+                <a href="#">
+                    <i class="fa fa-envelope"></i> <span>Liên hệ</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{setActive('', 3)}}"><a href="{{route('admin.contact.index')}}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>

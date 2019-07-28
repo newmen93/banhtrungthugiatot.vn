@@ -135,6 +135,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="app_id" class="col-sm-2 control-label">Bật/Tắt Chat</label>
+                            <input type="hidden" name="type" value="zalo">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="app_id" placeholder="App ID" value="{{ $zalo->app_id }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-danger">Lưu</button>
                             </div>
