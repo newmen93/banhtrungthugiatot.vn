@@ -54,9 +54,9 @@
 
     <a href="{{route('admin.home')}}" class="logo">
 
-      <span class="logo-mini">AdminLTE</span>
+      <span class="logo-mini"><b>A</b>LT</span>
 
-      <span class="logo-lg"><b>ALTE2</b></span>
+      <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
     @include('backend.v1.layouts.header-navbar')
   </header>

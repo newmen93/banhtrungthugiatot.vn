@@ -2,6 +2,7 @@
 
 @push('styles')
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.4/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css">
 @endpush
 @section('button')
     <button type="button" data-toggle="modal" data-target="#confirmCreate" class="btn btn-primary btn-sm m-btn--square m-btn--icon m-btn--icon-only"
@@ -44,7 +45,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                {{-- @include('backend.v1.category._form',['mode'=>'list']) --}}
+                @include('backend.v1.post._form',['mode'=>'create'])
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
@@ -70,6 +71,12 @@
 
 @push('scripts')
 @include('backend.v1.layouts.data-table-script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.min.js" integrity="sha256-Q4K0T9IUORjpebn9dIu9szj2Rgn7GmLF+S3RjgM8aXw=" crossorigin="anonymous"></script>
+<script>
+$('.summernote').summernote({
+    height: 200
+});
+</script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#post-tb').DataTable({

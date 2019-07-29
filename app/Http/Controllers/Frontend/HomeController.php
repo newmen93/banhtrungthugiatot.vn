@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Product;
 use App\Models\Category;
+use App\Models\Price1;
+use App\Models\Price2;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,7 @@ class HomeController extends Controller
     }
     public function test($slug, $id)
     {
-        $cate  = Category::find(20);
+        $cate = Category::find(20);
         dd($slug, $id);
         return 'xxx';
     }
@@ -39,13 +40,13 @@ class HomeController extends Controller
 
         // get product hot
         $hotProducts = Product::whereIsHot(1)->paginate(self::$itemsPerPage);
-        
+
         // get product discount
         $discountProducts = Product::whereIsDiscount(1)->paginate(self::$itemsPerPage);
         return view('frontend.v1.home', [
             'newProducts' => $newProducts,
             'hotProducts' => $hotProducts,
-            'discountProducts' => $discountProducts
+            'discountProducts' => $discountProducts,
         ]);
     }
 
@@ -60,11 +61,14 @@ class HomeController extends Controller
     }
     public function contact()
     {
+
         return view('frontend.v2.contact');
     }
     public function price()
     {
-        return view('frontend.v2.price');
+        $t1 = Price1::all();
+        $t2 = Price2::all();
+        return view('frontend.v2.price', ['t1' => $t1, 't2' => $t2]);
     }
     public function post()
     {

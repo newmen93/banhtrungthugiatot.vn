@@ -4,7 +4,7 @@
         <!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Favicon-->
-        <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="{{asset('frontend/v2/img/fav.png')}}">
         <!-- Author Meta -->
         <meta name="author" content="banhtrungthu2019">
         <!-- Meta Description -->
@@ -18,9 +18,7 @@
         <title>Bánh trung thu 2019</title>
 
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-        <!--
-        CSS
-        ============================================= -->
+        <!-- CSS ============================================= -->
         <link rel="stylesheet" href="{{asset('frontend/v2/css/linearicons.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/v2/css/font-awesome.min.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/v2/css/bootstrap.css')}}">
@@ -131,7 +129,7 @@
                         </div>	
                         <div class="col-lg-12">
                             <p class="footer-text">
-Copyright &copy;{{date("Y")}} <br>banhtrungthugiatot.vn | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://dkteam.tk" target="_blank">DKTEAM</a></p>
+Copyright &copy;{{date("Y")}} banhtrungthugiatot.vn <br> Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://dkteam.tk" target="_blank">DKTEAM</a></p>
                         </div>
                     </div>
                 </div>
