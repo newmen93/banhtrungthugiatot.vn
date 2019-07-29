@@ -6,16 +6,16 @@
         <!-- Favicon-->
         <link rel="shortcut icon" href="img/fav.png">
         <!-- Author Meta -->
-        <meta name="author" content="trunghongta">
+        <meta name="author" content="banhtrungthu2019">
         <!-- Meta Description -->
-        <meta name="description" content="bánh trung thu">
+        <meta name="description" content="bánh trung thu 2019">
         <!-- Meta Keyword -->
-        <meta name="keywords" content="bánh trung thu">
+        <meta name="keywords" content="bánh trung thu 2019, 2019, banhtrungthu, bánh trung thu">
         <!-- meta character set -->
         <meta charset="UTF-8">
         <!-- Site Title -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Bakery</title>
+        <title>Bánh trung thu 2019</title>
 
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
         <!--
@@ -47,7 +47,7 @@
                               </div>
                               <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
                                 <a class="btns" href="tel:+953 012 3654 896">+84 012 3654 896</a>
-                                  <a class="btns" href="mailto:support@colorlib.com">info@banhtrungthu2019.vn</a>		
+                                  <a class="btns" href="mailto:support@colorlib.com">lienhe@banhtrungthugiatot.vn</a>		
                                   <a class="icons" href="tel:+953 012 3654 896">
                                       <span class="lnr lnr-phone-handset"></span>
                                   </a>
