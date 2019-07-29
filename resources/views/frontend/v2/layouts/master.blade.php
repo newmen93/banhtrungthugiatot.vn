@@ -44,9 +44,9 @@
                             </div>	    				  					
                               </div>
                               <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
-                                <a class="btns" href="tel:+953 012 3654 896">+84 012 3654 896</a>
-                                  <a class="btns" href="mailto:support@colorlib.com">lienhe@banhtrungthugiatot.vn</a>		
-                                  <a class="icons" href="tel:+953 012 3654 896">
+                                <a class="btns" href="tel:+84 909 490 328">+84 909 490 328</a>
+                                  <a class="btns" href="mailto:kkuomissu@gmail.com">kkuomissu@gmail.com</a>		
+                                  <a class="icons" href="tel:+84 909 490 328">
                                       <span class="lnr lnr-phone-handset"></span>
                                   </a>
                                   <a class="icons" href="mailto:support@colorlib.com">

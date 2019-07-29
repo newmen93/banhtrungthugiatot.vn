@@ -27,7 +27,7 @@ Route::get('lien-he', 'Frontend\HomeController@contact')->name('contact');
 Route::post('lien-he', 'Frontend\ContactController@store')->name('store.contact');
 Route::get('bao-gia', 'Frontend\HomeController@price')->name('price');
 Route::get('gioi-thieu', 'Frontend\HomeController@about')->name('about');
-Route::get('tin-tuc', 'Frontend\HomeController@post')->name('post');
+Route::get('tin-tuc', 'Frontend\PostController@index')->name('post');
 # User route for frontend auth
 Route::group([
     'namespace' => 'Frontend\Auth',
