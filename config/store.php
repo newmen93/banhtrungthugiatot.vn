@@ -1,8 +1,6 @@
 <?php
 
-
 return [
-    "name" => "shopname",
-    "number" => "number"
-
+    "domain" => "banhtrungthugiatot.vn",
+    "name" => "Bánh trung thu 2019",
 ];

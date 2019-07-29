@@ -23,8 +23,9 @@ class ViewComponentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        \Blade::directive('render', function ($component) {
-            return "<?php echo (app($component))->toHtml(); ?>";
-        });
+        //out of date in laravel 5.8 version
+        /*\Blade::directive('render', function ($component) {
+    return "<?php echo (app($component))->toHtml(); ?>";
+    });*/
     }
 }
