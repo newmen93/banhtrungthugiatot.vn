@@ -2,37 +2,34 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\System;
-use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class SystemController extends Controller
 {
-    public function general(){
-        $title = System::whereName('title')->first()->value ?? '';
-        $desc = System::whereName('description')->first()->value ?? '';
+    public function general()
+    {
 
         $data = @file_get_contents(base_path('storage/website.json'));
         $data = json_decode($data);
 
         return view('backend.v1.system.general', [
-            'title' => $title,
-            'description' => $desc,
             'fanpage' => $data->fanpage,
             'email' => $data->email,
-            'phone'=> $data->phone,
+            'phone' => $data->phone,
             'address' => $data->address,
-            'bank' => $data->bank
+            'bank' => $data->bank,
         ]);
     }
-    public function postGeneral(Request $request){
+    public function postGeneral(Request $request)
+    {
         if ($request->info == 'info') {
-            $data['fanpage']=$request->fanpage;
-            $data['email']=$request->email;
-            $data['phone']=$request->phone;
-            $data['address']=$request->address;
-            $data['bank']=$request->bank;
+            $data['fanpage'] = $request->fanpage;
+            $data['email'] = $request->email;
+            $data['phone'] = $request->phone;
+            $data['address'] = $request->address;
+            $data['bank'] = $request->bank;
             $newJsonString = json_encode($data, JSON_UNESCAPED_UNICODE);
             file_put_contents(base_path('storage/website.json'), stripslashes($newJsonString));
             return back()->with('success', 'Lưu thành công!');
@@ -48,15 +45,17 @@ class SystemController extends Controller
         $system2->save();
         return back()->with('success', 'Lưu thành công!');
     }
-    public function advanced(){
+    public function advanced()
+    {
         return view('backend.v1.system.advanced', [
-            'client'=> getSetting('client.json'),
-            'facebook'=> getSetting('facebook.json'),
-            'google'=> getSetting('google.json'),
-            'zalo'=> getSetting('zalo.json'),
+            'client' => getSetting('client.json'),
+            'facebook' => getSetting('facebook.json'),
+            'google' => getSetting('google.json'),
+            'zalo' => getSetting('zalo.json'),
         ]);
     }
-    public function postAdvanced(Request $request){
+    public function postAdvanced(Request $request)
+    {
 
         switch ($request->input('type')) {
             case 'kiotviet':

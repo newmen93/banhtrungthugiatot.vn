@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>MoonShop | Dashboard</title>
+  <title>banhtrungthugiatot.vn | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -54,9 +54,9 @@
 
     <a href="{{route('admin.home')}}" class="logo">
 
-      <span class="logo-mini">DHNR</span>
+      <span class="logo-mini">AdminLTE</span>
 
-      <span class="logo-lg"><b>DHNR</b></span>
+      <span class="logo-lg"><b>ALTE2</b></span>
     </a>
     @include('backend.v1.layouts.header-navbar')
   </header>
@@ -86,7 +86,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0.0
+      <b>Version</b> 1.0.1
     </div>
     <strong>Copyright &copy; {{date("Y")}} <a target="_blank" href="https://dkteam.tk">DKTEAM</a>.</strong> All rights
     reserved.

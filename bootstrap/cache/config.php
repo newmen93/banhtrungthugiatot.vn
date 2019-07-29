@@ -235,7 +235,7 @@
       'mysql' => 
       array (
         'driver' => 'mysql',
-        'host' => '127.0.0.1',
+        'host' => 'mysql.trung.link',
         'port' => '3306',
         'database' => 'shopmoon',
         'username' => 'root',
@@ -251,7 +251,7 @@
       'pgsql' => 
       array (
         'driver' => 'pgsql',
-        'host' => '127.0.0.1',
+        'host' => 'mysql.trung.link',
         'port' => '3306',
         'database' => 'shopmoon',
         'username' => 'root',
@@ -265,7 +265,7 @@
       'sqlsrv' => 
       array (
         'driver' => 'sqlsrv',
-        'host' => '127.0.0.1',
+        'host' => 'mysql.trung.link',
         'port' => '3306',
         'database' => 'shopmoon',
         'username' => 'root',
@@ -336,33 +336,6 @@
       'memory' => 1024,
       'threads' => 2,
       'time' => 2,
-    ),
-  ),
-  'kiot' => 
-  array (
-    'name' => 'MoonShop | www.moonshop.local',
-    'order_status' => 
-    array (
-      'order_success' => 
-      array (
-        'id' => 1,
-        'paid' => NULL,
-      ),
-      'shipping' => 4,
-      'done' => 
-      array (
-        'id' => 5,
-        'paid' => NULL,
-      ),
-    ),
-    'branch_id' => 38930,
-  ),
-  'laratables' => 
-  array (
-    'row_id_prefix' => 'laratables_row_',
-    'date_format' => 'Y-m-d H:i:s',
-    'non_searchable_columns' => 
-    array (
     ),
   ),
   'logging' => 
@@ -557,8 +530,8 @@
   ),
   'store' => 
   array (
-    'name' => 'shopname',
-    'number' => 'number',
+    'domain' => 'banhtrungthugiatot.vn',
+    'name' => 'Bánh trung thu 2019',
   ),
   'view' => 
   array (
@@ -567,22 +540,6 @@
       0 => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\resources\\views',
     ),
     'compiled' => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\storage\\framework\\views',
-  ),
-  'cart' => 
-  array (
-    'tax' => 21,
-    'database' => 
-    array (
-      'connection' => NULL,
-      'table' => 'shoppingcart',
-    ),
-    'destroy_on_logout' => false,
-    'format' => 
-    array (
-      'decimals' => 2,
-      'decimal_point' => '.',
-      'thousand_seperator' => ',',
-    ),
   ),
   'trustedproxy' => 
   array (

@@ -72,22 +72,6 @@
 @include('backend.v1.layouts.data-table-script')
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#sync-category').on('click',function(e){
-            e.preventDefault();
-            $.ajax({
-                url:'{{route('admin.category.sync')}}',
-                type:'POST',
-                beforeSend:function(){
-                    $('button#sync-category i').addClass('fa-spin');
-                },
-                success:function(response){
-                    $('button#sync-category i').removeClass('fa-spin');
-                    alertify.success('Đồng bộ thành công');
-                    console.log(response);
-                    $('#category-tb').DataTable().ajax.reload();
-                }
-            });
-        });
         $('#contact-tb').DataTable({
             dom: 'Bfrtip',
             buttons: [

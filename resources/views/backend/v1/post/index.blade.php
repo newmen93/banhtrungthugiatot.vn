@@ -35,7 +35,7 @@
 </div>
 <!--modal-->
 <div class="modal fade" id="confirmCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Thông Báo</h5>
@@ -72,22 +72,6 @@
 @include('backend.v1.layouts.data-table-script')
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#sync-category').on('click',function(e){
-            e.preventDefault();
-            $.ajax({
-                url:'{{route('admin.category.sync')}}',
-                type:'POST',
-                beforeSend:function(){
-                    $('button#sync-category i').addClass('fa-spin');
-                },
-                success:function(response){
-                    $('button#sync-category i').removeClass('fa-spin');
-                    alertify.success('Đồng bộ thành công');
-                    console.log(response);
-                    $('#category-tb').DataTable().ajax.reload();
-                }
-            });
-        });
         $('#post-tb').DataTable({
             dom: 'Bfrtip',
             buttons: [
@@ -110,7 +94,6 @@
                 {data: 'title', orderable: false},
                 {data: 'action'}
             ]
-
         });
         $('form#category-form').on('submit', function(e){
             e.preventDefault();
@@ -139,7 +122,7 @@
             $('form#category-form').attr('action', `${window.origin}/admin/category/store`);
         });
 
-        $('#category-tb').on('click', 'tr td .btn-edit', function () {
+        $('#post-tb').on('click', 'tr td .btn-edit', function () {
             $('form#category-form').trigger("reset");
             let category_id = $(this).data('id');
             let url = `${location.origin}/admin/category/edit/${category_id}`;
@@ -159,10 +142,10 @@
             });
             $("#confirmCreate").modal('show');
         });
-        $('#category-tb').on('click', 'tr td .btn-delete', function () {
-            let category_id = $(this).data('id');
-            $('#confirmDelete button.btn-danger').data('id',category_id);
-            console.log(category_id);
+        $('#post-tb').on('click', 'tr td .btn-delete', function () {
+            let post_id = $(this).data('id');
+            $('#confirmDelete button.btn-danger').data('id',post_id);
+            console.log(post_id);
             $("#confirmDelete").modal();
         });
         $('#confirmDelete button.btn-danger').on('click', function(e){
