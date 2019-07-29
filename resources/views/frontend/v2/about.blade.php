@@ -18,7 +18,7 @@
 </section>
 <!-- End banner Area -->
 <!-- Start Sample Area -->
-<section class="sample-text-area">
+<section class="sample-text-area menu-list-area section-gap">
     <div class="container">
         <h3 class="text-heading">Text Sample</h3>
         <p class="sample-text">

@@ -1,5 +1,5 @@
-    <!DOCTYPE html>
-    <html lang="vi-VN" class="no-js">
+<!DOCTYPE html>
+<html lang="vi-VN" class="no-js">
     <head>
         <!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,12 +30,13 @@
         <link rel="stylesheet" href="{{asset('frontend/v2/css/jquery-ui.css')}}">			
         <link rel="stylesheet" href="{{asset('frontend/v2/css/owl.carousel.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/v2/css/main.css')}}">
-        </head>
-        <body>	
-              <header id="header" id="home">
-                  <div class="header-top">
-                      <div class="container">
-                          <div class="row align-items-center">
+        @stack('header')
+    </head>
+    <body>
+        <header id="header" id="home">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row align-items-center">
                               <div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
                               <div class="menu-social-icons">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -52,10 +53,10 @@
                                   </a>
                                   <a class="icons" href="mailto:support@colorlib.com">
                                       <span class="lnr lnr-envelope"></span>
-                                  </a>		
-                              </div>
-                          </div>			  					
-                      </div>
+                                </a>		
+                            </div>
+                        </div>			  					
+                    </div>
                 </div>
                 <div class="container main-menu">
                     <div class="row align-items-center justify-content-between d-flex">
@@ -151,5 +152,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> <br>b
             <script src="{{asset('frontend/v2/js/jquery.nice-select.min.js')}}"></script>
             <script src="{{asset('frontend/v2/js/mail-script.js')}}"></script>
             <script src="{{asset('frontend/v2/js/main.js')}}"></script>
-        </body>
-    </html>
+            @stack('footer')
+    </body>
+</html>

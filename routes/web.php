@@ -72,8 +72,6 @@ Route::post('update_member_info/{$id}','Frontend\CustomerController@updateMember
 Route::post('dat-hang','Frontend\OrderController@order')->name('order');
 Route::get('dat-hang-thanh-cong','Frontend\OrderController@orderSuccess')->name('success');
 
-# address ship fee route
-Route::post('ship-fee','Frontend\ShipFeeController@getFee');
 # user infor
 Route::get('chi-tiet-nguoi-dung', 'Frontend\UserController@index')->name('user-detail');
 
@@ -110,7 +108,7 @@ Route::group([
         Route::get('advanced','SystemController@advanced')->name('advanced');
         Route::post('advanced','SystemController@postAdvanced')->name('advanced.update');
     });
-    # Product Category
+    # Category
     Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
         Route::get('/', 'CategoryController@index')->name('index');
         Route::post('/table', 'CategoryController@dataTable')->name('table');
@@ -121,7 +119,7 @@ Route::group([
         Route::post('/update/{id}', 'CategoryController@update')->name('update');
         Route::delete('/delete/{id}', 'CategoryController@destroy')->name('delete');
     });
-    # Product Contact
+    # Contact
     Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
         Route::get('/', 'ContactController@index')->name('index');
         Route::post('/table', 'ContactController@dataTable')->name('table');
@@ -138,7 +136,6 @@ Route::group([
         Route::post('/table', 'PostController@dataTable')->name('table');
         Route::get('/create', 'PostController@create')->name('create');
         Route::post('/store', 'PostController@store')->name('store');
-        Route::post('/sync', 'PostController@sync')->name('sync');
         Route::get('/edit/{id}', 'PostController@edit')->name('edit');
         Route::post('/update/{id}', 'PostController@update')->name('update');
         Route::delete('/delete/{id}', 'PostController@destroy')->name('delete');
@@ -149,28 +146,9 @@ Route::group([
         Route::get('/create', 'ProductController@create')->name('create');
         Route::post('/table', 'ProductController@dataTable')->name('table');
         Route::post('/store', 'ProductController@store')->name('store');
-        Route::post('/sync', 'ProductController@sync')->name('sync');
         Route::get('/edit/{id}', 'ProductController@edit')->name('edit');
         Route::post('/update/{id}', 'ProductController@update')->name('update');
         Route::delete('/delete/{id}', 'ProductController@destroy')->name('delete');
-    });
-    # Product Attribute Route
-    Route::group(['prefix' => 'attribute', 'as' => 'attribute.'], function () {
-        Route::get('/', 'ProductAttributeController@index')->name('index');
-        Route::get('/create', 'ProductAttributeController@create')->name('create');
-        Route::post('/store', 'ProductAttributeController@store')->name('store');
-        Route::get('/edit/{id}', 'ProductAttributeController@edit')->name('edit');
-        Route::post('/update/{id}', 'ProductAttributeController@update')->name('update');
-        Route::delete('/delete/{id}', 'ProductAttributeController@destroy')->name('delete');
-    });
-    # Product Unit Route
-    Route::group(['prefix' => 'unit', 'as' => 'unit.'], function () {
-        Route::get('/', 'ProductUnitController@index')->name('index');
-        Route::get('/create', 'ProductUnitController@create')->name('create');
-        Route::post('/store', 'ProductUnitController@store')->name('store');
-        Route::get('/edit/{id}', 'ProductUnitController@edit')->name('edit');
-        Route::post('/update/{id}', 'ProductUnitController@update')->name('update');
-        Route::delete('/delete/{id}', 'ProductUnitController@destroy')->name('delete');
     });
     # Order Route
     Route::group(['prefix' => 'order', 'as' => 'order.'], function () {
@@ -194,15 +172,6 @@ Route::group([
         Route::post('/update/{id}', 'CustomerController@update')->name('update');
         Route::delete('/delete/{id}', 'CustomerController@destroy')->name('delete');
     });
-    # Report Route
-    Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
-        Route::get('/', 'ReportController@index')->name('index');
-        Route::get('/create', 'ReportController@create')->name('create');
-        Route::post('/store', 'ReportController@store')->name('store');
-        Route::get('/edit/{id}', 'ReportController@edit')->name('edit');
-        Route::post('/update/{id}', 'ReportController@update')->name('update');
-        Route::delete('/delete/{id}', 'ReportController@destroy')->name('delete');
-    });
     # User Route
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
         Route::get('/', 'UserController@index')->name('index');
@@ -212,27 +181,5 @@ Route::group([
         Route::post('/update/{id}', 'UserController@update')->name('update');
         Route::delete('/delete/{id}', 'UserController@destroy')->name('delete');
     });
-    # Email Template Route
-    Route::group(['prefix' => 'email', 'as' => 'email.'], function () {
-        Route::get('/', 'EmailTemplateController@index')->name('index');
-        Route::get('/create', 'EmailTemplateController@create')->name('create');
-        Route::post('/table', 'EmailTemplateController@dataTable')->name('table');
-        Route::post('/store', 'EmailTemplateController@store')->name('store');
-        Route::get('/edit/{id}', 'EmailTemplateController@edit')->name('edit');
-        Route::post('/update/{id}', 'EmailTemplateController@update')->name('update');
-        Route::delete('/delete/{id}', 'EmailTemplateController@destroy')->name('delete');
-    });
-     # Shipping Route
-    Route::group(['prefix' => 'shipping', 'as' => 'shipping.'], function () {
-        Route::get('/', 'ShippingController@index')->name('index');
-        Route::get('/create', 'ShippingController@create')->name('create');
-        Route::post('/table', 'ShippingController@dataTable')->name('table');
-        Route::post('/store', 'ShippingController@store')->name('store');
-        Route::get('/edit/{id}', 'ShippingController@edit')->name('edit');
-        Route::post('/update/{id}', 'ShippingController@update')->name('update');
-        Route::delete('/delete/{id}', 'ShippingController@destroy')->name('delete');
-        Route::put('/update-json','ShippingController@updateJson')->name('update.json');
-    });
-
 });
 
