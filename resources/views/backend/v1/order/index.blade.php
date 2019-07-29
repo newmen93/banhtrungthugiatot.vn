@@ -1,10 +1,6 @@
 @extends('backend.v1.layouts.app')
 
 @section('button')
-{{-- <button type="button" id="sync-order" class="btn btn-success btn-sm m-btn--square m-btn--icon m-btn--icon-only"
-    title="Sync">
-    <i class="fa fa-spinner"></i> Sync data
-</button> --}}
 @stop
 
 @section('content')
@@ -41,22 +37,6 @@
 
 <script>
 $(document).ready(function() {
-    $('#sync-order').on('click',function(e){
-        e.preventDefault();
-        $.ajax({
-            url:'{{route('admin.order.sync')}}',
-            type:'POST',
-            beforeSend:function(){
-                $('button#sync-order i').addClass('fa-spin');
-            },
-            success:function(response){
-                $('button#sync-order i').removeClass('fa-spin');
-                alertify.success('Đồng bộ thành công');
-                console.log(response);
-                $('#order-tb').DataTable().ajax.reload();
-            }
-        });
-    });
     //CKEDITOR.replace('summary-ckeditor');
     $('#order-tb').DataTable({
         dom: 'Bfrtip',
@@ -82,7 +62,6 @@ $(document).ready(function() {
             {data: 'created_at', orderable: false}, //, orderable: false
             {data: 'action', orderable: false} //orderable: false, searchable: false
         ]
-
     });
 
     $('#order-tb').on('click', 'tr td .btn-edit', function () {

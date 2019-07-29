@@ -9,22 +9,25 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-Route::any('/404', function() {
+ */
+Route::any('/404', function () {
     return View::make('frontend/v1/errors/404', [], 404);
 });
 ############################### FRONTEND ROUTE ############################################
-# Guest route for frontend
-Route::get('/','Frontend\HomeController@index')->name('home');
+# @TODO
+#Route for newsletter email
 
-Route::get('trang-chu','Frontend\HomeController@index');
-Route::get('gio-hang','Frontend\CartController@index');
-Route::get('thanh-toan','Frontend\CartController@payment');
-Route::get('lien-he','Frontend\HomeController@contact')->name('contact');
-Route::post('lien-he','Frontend\ContactController@store')->name('store.contact');
-Route::get('bao-gia','Frontend\HomeController@price')->name('price');
-Route::get('gioi-thieu','Frontend\HomeController@about')->name('about');
-Route::get('tin-tuc','Frontend\HomeController@post')->name('post');
+# Guest route for frontend
+Route::get('/', 'Frontend\HomeController@index')->name('home');
+
+Route::get('trang-chu', 'Frontend\HomeController@index');
+Route::get('gio-hang', 'Frontend\CartController@index');
+Route::get('thanh-toan', 'Frontend\CartController@payment');
+Route::get('lien-he', 'Frontend\HomeController@contact')->name('contact');
+Route::post('lien-he', 'Frontend\ContactController@store')->name('store.contact');
+Route::get('bao-gia', 'Frontend\HomeController@price')->name('price');
+Route::get('gioi-thieu', 'Frontend\HomeController@about')->name('about');
+Route::get('tin-tuc', 'Frontend\HomeController@post')->name('post');
 # User route for frontend auth
 Route::group([
     'namespace' => 'Frontend\Auth',
@@ -45,32 +48,29 @@ Route::get('danh-muc/{slug}.html', 'Frontend\CategoryController@getCategory')->n
 Route::get('san-pham/{slug}.html', 'Frontend\ProductController@getDetail')->name('detail');
 
 # Shopping cart route for frontend
-Route::post('add-to-cart','Frontend\CartController@addToCart');
-Route::get('gio-hang','Frontend\CartController@index')->name('cart');
-Route::get('thanh-toan','Frontend\CartController@checkout')->name('checkout');
-Route::post('update_quantity','Frontend\CartController@updateQtty');
-Route::post('remove_item','Frontend\CartController@removeItem');
+Route::post('add-to-cart', 'Frontend\CartController@addToCart');
+Route::get('gio-hang', 'Frontend\CartController@index')->name('cart');
+Route::get('thanh-toan', 'Frontend\CartController@checkout')->name('checkout');
+Route::post('update_quantity', 'Frontend\CartController@updateQtty');
+Route::post('remove_item', 'Frontend\CartController@removeItem');
 
 # order-management route for frontend
-Route::get('quan-ly-dat-hang/{id}.html','Frontend\OrderManagementController@index')->name('order-list');
-Route::get('chi-tiet-don-hang/{id}.html','Frontend\OrderManagementController@getOrderDetails')->name('order-detail');
+Route::get('quan-ly-dat-hang/{id}.html', 'Frontend\OrderManagementController@index')->name('order-list');
+Route::get('chi-tiet-don-hang/{id}.html', 'Frontend\OrderManagementController@getOrderDetails')->name('order-detail');
 
 # search form result
-Route::get('search','Frontend\SearchController@getSearchResult')->name('search');
+Route::get('search', 'Frontend\SearchController@getSearchResult')->name('search');
 
 # auto search key word
 Route::get('find', 'Frontend\SearchController@getSearchHint');
 
-# quickview
-Route::post('quick-view', 'Frontend\ProductController@getQuickView');
-
 # get customer-info
-Route::post('get_member_info','Frontend\CustomerController@getMemberInfo');
-Route::post('update_member_info/{$id}','Frontend\CustomerController@updateMemberInfo')->name('update.member');
+Route::post('get_member_info', 'Frontend\CustomerController@getMemberInfo');
+Route::post('update_member_info/{$id}', 'Frontend\CustomerController@updateMemberInfo')->name('update.member');
 
 # order route
-Route::post('dat-hang','Frontend\OrderController@order')->name('order');
-Route::get('dat-hang-thanh-cong','Frontend\OrderController@orderSuccess')->name('success');
+Route::post('dat-hang', 'Frontend\OrderController@order')->name('order');
+Route::get('dat-hang-thanh-cong', 'Frontend\OrderController@orderSuccess')->name('success');
 
 # user infor
 Route::get('chi-tiet-nguoi-dung', 'Frontend\UserController@index')->name('user-detail');
@@ -80,7 +80,7 @@ Route::get('chi-tiet-nguoi-dung', 'Frontend\UserController@index')->name('user-d
 Route::group([
     'namespace' => 'Backend',
     'prefix' => 'admin',
-    'as' => 'admin.'
+    'as' => 'admin.',
 ], function () {
     Route::get('/login-page', 'Auth\AuthController@loginForm');
     Route::post('/login-page', 'Auth\AuthController@login')->name('login');
@@ -98,15 +98,15 @@ Route::group([
     Route::get('/home', 'HomeController@index')->name('home');
     # Profile
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
-        Route::get('index','ProfileController@index')->name('index');
-        Route::post('update','ProfileController@update')->name('update');
+        Route::get('index', 'ProfileController@index')->name('index');
+        Route::post('update', 'ProfileController@update')->name('update');
     });
     # System
     Route::group(['prefix' => 'system', 'as' => 'system.'], function () {
-        Route::get('general','SystemController@general')->name('general');
-        Route::post('general','SystemController@postGeneral')->name('general.update');
-        Route::get('advanced','SystemController@advanced')->name('advanced');
-        Route::post('advanced','SystemController@postAdvanced')->name('advanced.update');
+        Route::get('general', 'SystemController@general')->name('general');
+        Route::post('general', 'SystemController@postGeneral')->name('general.update');
+        Route::get('advanced', 'SystemController@advanced')->name('advanced');
+        Route::post('advanced', 'SystemController@postAdvanced')->name('advanced.update');
     });
     # Category
     Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
@@ -114,7 +114,6 @@ Route::group([
         Route::post('/table', 'CategoryController@dataTable')->name('table');
         Route::get('/create', 'CategoryController@create')->name('create');
         Route::post('/store', 'CategoryController@store')->name('store');
-        Route::post('/sync', 'CategoryController@sync')->name('sync');
         Route::get('/edit/{id}', 'CategoryController@edit')->name('edit');
         Route::post('/update/{id}', 'CategoryController@update')->name('update');
         Route::delete('/delete/{id}', 'CategoryController@destroy')->name('delete');
@@ -125,7 +124,6 @@ Route::group([
         Route::post('/table', 'ContactController@dataTable')->name('table');
         Route::get('/create', 'ContactController@create')->name('create');
         Route::post('/store', 'ContactController@store')->name('store');
-        Route::post('/sync', 'ContactController@sync')->name('sync');
         Route::get('/edit/{id}', 'ContactController@edit')->name('edit');
         Route::post('/update/{id}', 'ContactController@update')->name('update');
         Route::delete('/delete/{id}', 'ContactController@destroy')->name('delete');
@@ -156,7 +154,6 @@ Route::group([
         Route::get('/create', 'OrderController@create')->name('create');
         Route::post('/table', 'OrderController@dataTable')->name('table');
         Route::post('/store', 'OrderController@store')->name('store');
-        Route::post('/sync', 'OrderController@sync')->name('sync');
         Route::get('/edit/{id}', 'OrderController@edit')->name('edit');
         Route::post('/update/{id}', 'OrderController@update')->name('update');
         Route::delete('/delete/{id}', 'OrderController@destroy')->name('delete');
@@ -166,7 +163,6 @@ Route::group([
         Route::get('/', 'CustomerController@index')->name('index');
         Route::get('/create', 'CustomerController@create')->name('create');
         Route::post('/store', 'CustomerController@store')->name('store');
-        Route::post('/sync', 'CustomerController@sync')->name('sync');
         Route::post('/table', 'CustomerController@dataTable')->name('table');
         Route::get('/edit/{id}', 'CustomerController@edit')->name('edit');
         Route::post('/update/{id}', 'CustomerController@update')->name('update');
@@ -182,4 +178,3 @@ Route::group([
         Route::delete('/delete/{id}', 'UserController@destroy')->name('delete');
     });
 });
-

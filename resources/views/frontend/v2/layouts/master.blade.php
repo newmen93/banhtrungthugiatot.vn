@@ -82,14 +82,14 @@
                               {{-- <li><a href="elements.html">Elements</a></li>							  			          	           --}}
                               <li><a href="{{route('contact')}}">Liên hệ</a></li>
                             </ul>
-                        </nav><!-- #nav-menu-container -->		
+                        </nav>
                     </div>
                 </div>
-              </header><!-- #header -->
+              </header>
 
-            @yield('content')					
+            @yield('content')
 
-            <!-- start footer Area -->		
+            <!-- start footer Area -->
             <footer class="footer-area section-gap">
                 <div class="container">
                     <div class="row">
@@ -98,7 +98,7 @@
                                 <h6>Giới thiệu</h6>
                                 <p>
                                     Bánh trung thu 2019, banhtrungthu2019.vn
-                                </p>							
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-5  col-md-6 col-sm-6">
@@ -131,13 +131,12 @@
                         </div>	
                         <div class="col-lg-12">
                             <p class="footer-text">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> <br>banhtrungthu2019.vn | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://dkteam.tk" target="_blank">DKTEAM</a></p>
+Copyright &copy;{{date("Y")}} <br>banhtrungthugiatot.vn | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://dkteam.tk" target="_blank">DKTEAM</a></p>
                         </div>
                     </div>
                 </div>
             </footer>	
-            <!-- End footer Area -->	
-
+            <!-- End footer Area -->
             <script src="{{asset('frontend/v2/js/vendor/jquery-2.2.4.min.js')}}"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="{{asset('frontend/v2/js/vendor/bootstrap.min.js')}}"></script>

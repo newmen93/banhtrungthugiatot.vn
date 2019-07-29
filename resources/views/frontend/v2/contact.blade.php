@@ -19,7 +19,7 @@
 <!-- End banner Area -->
 
 <!-- Start contact-page Area -->
-<section class="contact-page-area section-gap">
+<section class="contact-page-area section-gap menu-list-area">
     <div class="container">
         <div class="row">
             <div class="map-wrap" style="width:100%; height: 445px;" id="map"></div>
