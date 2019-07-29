@@ -86,12 +86,11 @@
                 </div>
             </div>
               <div class="tab-pane fade" id="pills-burger" role="tabpanel" aria-labelledby="pills-burger-tab">
-                <div class="single-menu-list row justify-content-between align-items-center">
+                <div class="single-menu-list row justify-content-between align-items-center text-center">
                     <div class="col-lg-12">
-                        <a href="#"><h4>Pizza Americano</h4></a>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advance. Usage of the Internet is becoming more common due to rapid advance.
-                        </p>
+                        <a href="#"><h4>Nhấn vào nút bên dưới để tải báo giá về</h4></a>
+                        <a href="{{asset('BGia.pdf')}}" class="genric-btn info circle arrow">Tải về<span class="lnr lnr-arrow-down"></span></a>
+                        
                     </div>
                 </div>
               </div>
