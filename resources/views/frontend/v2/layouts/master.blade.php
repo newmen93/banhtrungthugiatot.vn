@@ -15,6 +15,8 @@
         <meta charset="UTF-8">
         <!-- Site Title -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <!--open graph ogp.me-->
         <meta property="og:site_name" content="Banhtrungthugiatot.vn" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="vi_VN" />
@@ -46,7 +48,7 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-google-plus"></i></a>
                                 <a href="#"><i class="fa fa-youtube"></i></a>
-                            </div>	    				  					
+                            </div>
                               </div>
                               <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
                                 <a class="btns" href="tel:+84 909 490 328">+84 909 490 328</a>
@@ -56,9 +58,9 @@
                                   </a>
                                   <a class="icons" href="mailto:support@colorlib.com">
                                       <span class="lnr lnr-envelope"></span>
-                                </a>		
+                                </a>
                             </div>
-                        </div>			  					
+                        </div>
                     </div>
                 </div>
                 <div class="container main-menu">
@@ -68,21 +70,9 @@
                             <ul class="nav-menu">
                               <li class="menu-active"><a href="{{route('home')}}">Trang chủ</a></li>
                               <li><a href="{{route('about')}}">Giới thiệu</a></li>
-                              <li><a href="{{route('post')}}">Tin tức</a></li>
                               <li><a href="{{route('price')}}">Báo giá</a></li>
-                              {{-- <li class="menu-has-children"><a href="">Blog</a>
-                                <ul>
-                                  <li><a href="blog-home.html">Blog Home</a></li>
-                                  <li><a href="blog-single.html">Blog Single</a></li>
-                                  <li class="menu-has-children"><a href="">Level 2</a>
-                                    <ul>
-                                      <li><a href="#">Item One</a></li>
-                                      <li><a href="#">Item Two</a></li>
-                                    </ul>
-                                  </li>					              
-                                </ul>
-                              </li> --}}
-                              {{-- <li><a href="elements.html">Elements</a></li>							  			          	           --}}
+                              <li><a href="{{route('product')}}">Sản phẩm</a></li>
+                              <li><a href="{{route('post')}}">Tin tức</a></li>
                               <li><a href="{{route('contact')}}">Liên hệ</a></li>
                             </ul>
                         </nav>

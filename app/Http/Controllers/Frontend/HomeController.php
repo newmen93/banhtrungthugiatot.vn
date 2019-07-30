@@ -49,8 +49,8 @@ class HomeController extends Controller
     {
         return view('frontend.v2.post.post');
     }
-    public function shopLocator()
+    public function porudct()
     {
-        return view('frontend.v1.shop-locator');
+        return view('frontend.v2.product.index');
     }
 }

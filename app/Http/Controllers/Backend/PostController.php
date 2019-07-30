@@ -93,7 +93,7 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->input('title');
         $post->content = $request->input('content');
-        $post->feature_image = $request->input('feature_image');
+        //$post->feature_image = $request->input('feature_image');
         $post->save();
         return response()->json(['status' => 200, 'post' => $post]);
     }
