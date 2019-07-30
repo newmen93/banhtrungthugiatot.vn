@@ -6,15 +6,20 @@
         <!-- Favicon-->
     <link rel="shortcut icon" href="{{asset('frontend/v2/img/fav.png')}}">
         <!-- Author Meta -->
-        <meta name="author" content="banhtrungthu2019">
+        <meta name="author" content="Banhtrungthu2019">
         <!-- Meta Description -->
-        <meta name="description" content="bánh trung thu 2019">
+        <meta name="description" content="Bánh trung thu 2019">
         <!-- Meta Keyword -->
         <meta name="keywords" content="bánh trung thu 2019, 2019, banhtrungthu, bánh trung thu">
         <!-- meta character set -->
         <meta charset="UTF-8">
         <!-- Site Title -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta property="og:site_name" content="Banhtrungthugiatot.vn" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="vi_VN" />
+        <meta property="fb:pages" content="" />
+
         <title>Bánh trung thu 2019</title>
 
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 

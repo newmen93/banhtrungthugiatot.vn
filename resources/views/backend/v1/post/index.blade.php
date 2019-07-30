@@ -49,7 +49,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                <button type="submit" class="btn btn-success" form="category-form">Lưu</button>
+                <button type="submit" class="btn btn-success" form="post-form">Lưu</button>
             </div>
         </div>
     </div>
@@ -102,7 +102,7 @@ $('.summernote').summernote({
                 {data: 'action'}
             ]
         });
-        $('form#category-form').on('submit', function(e){
+        $('form#post-form').on('submit', function(e){
             e.preventDefault();
             let $form = $(this);
             let action = $form.attr('action');
@@ -113,8 +113,8 @@ $('.summernote').summernote({
                 if(response.data.status == 200) {
                     alertify.success('Thêm mới thành công');
                     $("#confirmCreate").modal('hide');
-                    $('#category-tb').DataTable().ajax.reload();
-                    $('form#category-form').trigger("reset");
+                    $('#post-tb').DataTable().ajax.reload();
+                    $('form#post-form').trigger("reset");
                     let option = '';
                     for(let i = 0, l = categories.length; i < l; i++){
                         option += `<option value="${categories[i].id}">${categories[i].name}</option>`;
@@ -126,23 +126,23 @@ $('.summernote').summernote({
             .catch(error => {
                 console.log(error);
             });
-            $('form#category-form').attr('action', `${window.origin}/admin/category/store`);
+            $('form#post-form').attr('action', `${window.origin}/admin/category/store`);
         });
 
         $('#post-tb').on('click', 'tr td .btn-edit', function () {
-            $('form#category-form').trigger("reset");
-            let category_id = $(this).data('id');
-            let url = `${location.origin}/admin/category/edit/${category_id}`;
+            $('form#post-form').trigger("reset");
+            let post_id = $(this).data('id');
+            let url = `${location.origin}/admin/category/edit/${post_id}`;
             axios.get(url)
             .then(response=>{
                 let category = response.data.category;
                 let categories = response.data.categories;
 
-                $('form#category-form input[name="id"]').val(category.id);
-                $('form#category-form input[name="name"]').val(category.name);
-                $('form#category-form input[name="parent"]').val(category.parent_id);
-                $('form#category-form input[name="priority"]').val(category.priority);
-                $('form#category-form').attr('action', `${window.origin}/admin/category/update/${category.id}`);
+                $('form#post-form input[name="id"]').val(category.id);
+                $('form#post-form input[name="name"]').val(category.name);
+                $('form#post-form input[name="parent"]').val(category.parent_id);
+                $('form#post-form input[name="priority"]').val(category.priority);
+                $('form#post-form').attr('action', `${window.origin}/admin/category/update/${category.id}`);
             })
             .catch(err => {
                 console.log(err);
@@ -157,8 +157,8 @@ $('.summernote').summernote({
         });
         $('#confirmDelete button.btn-danger').on('click', function(e){
             e.preventDefault();
-            let category_id = $(this).data('id');
-            let url = `${location.origin}/admin/category/delete/${category_id}`;
+            let post_id = $(this).data('id');
+            let url = `${location.origin}/admin/category/delete/${post_id}`;
             axios.delete(url)
             .then(response => {
                 console.log(response.data);
@@ -169,7 +169,7 @@ $('.summernote').summernote({
                 if(response.data.status == 200) {
                     $("#confirmDelete").modal('hide');
                     alertify.success('Xóa thành công');
-                    $('#category-tb').DataTable().ajax.reload();
+                    $('#post-tb').DataTable().ajax.reload();
                 }
             })
             .catch(err => {
