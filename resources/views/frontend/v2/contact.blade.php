@@ -29,9 +29,9 @@
                         <span class="lnr lnr-home"></span>
                     </div>
                     <div class="contact-details">
-                        <h5>Binghamton, New York</h5>
+                        <h5>Ho Chi Minh City</h5>
                         <p>
-                            4343 Hinkle Deegan Lake Road
+                            Address:
                         </p>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                         <span class="lnr lnr-phone-handset"></span>
                     </div>
                     <div class="contact-details">
-                        <h5>00 (958) 9865 562</h5>
+                        <h5>+84 909 490 328</h5>
                         <p>Mon to Fri 9am to 6 pm</p>
                     </div>
                 </div>
@@ -49,8 +49,8 @@
                         <span class="lnr lnr-envelope"></span>
                     </div>
                     <div class="contact-details">
-                        <h5>support@colorlib.com</h5>
-                        <p>Send us your query anytime!</p>
+                        <h5>kkuomissu@gmail.com</h5>
+                        <p>Liên hệ với chúng tôi qua email</p>
                     </div>
                 </div>
             </div>
