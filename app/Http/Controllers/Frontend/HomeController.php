@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Price1;
 use App\Models\Price2;
-use App\Modes\Product;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -20,7 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::take(self::$itemsOnHome)->latest();
+        $posts = Post::take(self::$itemsOnHome)->orderBy('id', 'DESC')->get();
         $products = Product::whereIsHome(1)->get();
         return view('frontend.v2.home', ['posts' => $posts, 'products' => $products]);
     }
@@ -49,7 +49,7 @@ class HomeController extends Controller
     {
         return view('frontend.v2.post.post');
     }
-    public function porudct()
+    public function product()
     {
         $products = Product::all();
         return view('frontend.v2.product.index', ['products' => $products]);

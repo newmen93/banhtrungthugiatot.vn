@@ -28,6 +28,7 @@ Route::post('lien-he', 'Frontend\ContactController@store')->name('store.contact'
 Route::get('bao-gia', 'Frontend\HomeController@price')->name('price');
 Route::get('gioi-thieu', 'Frontend\HomeController@about')->name('about');
 Route::get('tin-tuc', 'Frontend\PostController@index')->name('post');
+Route::get('tin-tuc/{id}', 'Frontend\PostController@show')->name('show.post');
 Route::get('san-pham', 'Frontend\HomeController@product')->name('product');
 # User route for frontend auth
 Route::group([

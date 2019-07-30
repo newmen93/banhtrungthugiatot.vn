@@ -9,7 +9,7 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Bài viết mới nhất
+                    {{$post->title}}
                 </h1>	
                 <p class="text-white link-nav"><a href="{{route('home')}}">Trang chủ </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{route('home')}}"> Bài viết</a></p>
             </div>	
@@ -19,7 +19,7 @@
 <!-- End banner Area -->
 
 <!-- Start contact-page Area -->
-<section class="contact-page-area section-gap">
+{{-- <section class="contact-page-area section-gap">
     <div class="container">
         <div class="row">
             <div class="map-wrap" style="width:100%; height: 445px;" id="map"></div>
@@ -77,6 +77,28 @@
             </div>
         </div>
     </div>	
-</section>
+</section> --}}
+<!-- Start home-about Area -->
+<section class="sample-text-area menu-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    
+                    <h1>
+                       {{$post->title}}
+                    </h1>
+                    <h6 class="text-uppercase">Ngày: {{date_format(date_create($post->created_at),"d/m/Y")}}</h6>
+                    <p>
+                        {{-- <span>We are here to listen from you deliver exellence by any means</span> --}}
+                    </p>
+                    <p>
+                        {!!$post->content!!}
+                    </p>
+                    <a class="primary-btn squire mx-auto mt-20" href="#">Vote now</a>						
+                </div>
+            </div>
+        </div>	
+        <img class="about-img" src="img/about-img.png" alt="">
+    </section>
 <!-- End contact-page Area -->
 @stop

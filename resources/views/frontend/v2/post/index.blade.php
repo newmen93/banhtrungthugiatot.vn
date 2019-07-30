@@ -19,90 +19,45 @@
     </div>
 </section>
 
-<section class="blog-area section-gap" id="blog">
+<section class="blog-area section-gap menu-list-area" id="blog">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 pb-30 header-text">
-                <h1>Latest posts from our Blog</h1>
+                <h1>Các tin tức mới nhất về lễ trung thu 2019</h1>
                 <p>
-                    Do you want to share your love of cheese fondue with your children? Or did you just find out that one of your fondue party guests doesn’t drink alcohol.
+                   Đừng quên thường xuyên ghé thăm trang web để cập nhật các tin tức mới nhất từ chúng tôi
                 </p>
             </div>
         </div>
-        <div class="row">	
+        @foreach($posts->chunk(3) as $p)
+        <div class="row">
+            @foreach($p as $item)
             <div class="single-blog col-lg-4 col-md-4">
-                <div class="thumb">
+                {{-- <div class="thumb">
                     <img class="f-img img-fluid mx-auto" src="{{asset('v2/img/b1.jpg')}}" alt="">	
-                </div>
+                </div> --}}
                 <div class="bottom d-flex justify-content-between align-items-center flex-wrap">
                     <div>
-                        <img style="border-radius:none !important;" class="img-fluid" src="img/user.png" alt="">
-                        <a href="#"><span>Mark Wiens</span></a>
+                        <img style="border-radius:none !important;" class="img-fluid" src="" alt="">
+                        <a href="#"><span>Admin</span></a>
                     </div>
                     <div class="meta">
-                        13th Dec
-                        <span class="lnr lnr-heart"></span> 15
-                        <span class="lnr lnr-bubble"></span> 04
+                        {{date_format(date_create($item->created_at),"d/m/Y")}}
+                        <span class="lnr lnr-heart"></span> 0
+                        <span class="lnr lnr-bubble"></span> 0
                     </div>
                 </div>							
-                <a href="#">
-                    <h4>Stocking Your Restaurant
-                    Kitchen Finding Reliable Sellers</h4>
+            <a href="{{route('show.post',$item->id)}}">
+                <h4>{{$item->title}}</h4>
                 </a>
                 <p>
-                    Saving money – is something we would all like to do. Whether you are struggling to manage day to day or earning a six figure salary, saving is something we all think about.
+                    {!!substr($item->content, 0, 250)!!}
                 </p>
             </div>
-            <div class="single-blog col-lg-4 col-md-4">
-                <div class="thumb">
-                    <img class="f-img img-fluid mx-auto" src="{{asset('v2/img/b2.jpg')}}" alt="">	
-                </div>
-                <div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-                    <div>
-                        <img class="img-fluid" src="img/user.png" alt="">
-                        <a href="#"><span>Mark Wiens</span></a>
-                    </div>
-                    <div class="meta">
-                        13th Dec
-                        <span class="lnr lnr-heart"></span> 15
-                        <span class="lnr lnr-bubble"></span> 04
-                    </div>
-                </div>							
-                <a href="#">
-                    <h4>Cooking For Special Occasions
-                    Cookware In The Brick And Mortr</h4>
-                </a>
-                <p>
-                    Let’s talk about meat fondue recipes and what you need to know first. Meat fondue also known as oil fondue is a method of cooking all kinds of meats, poultry, and seafood in a pot of heated oil.
-                </p>
-            </div>
-            <div class="single-blog col-lg-4 col-md-4">
-                <div class="thumb">
-                    <img class="f-img img-fluid mx-auto" src="{{asset('v2/img/b3.jpg')}}" alt="">	
-                </div>
-                <div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-                    <div>
-                        <img class="img-fluid" src="img/user.png" alt="">
-                        <a href="#"><span>Mark Wiens</span></a>
-                    </div>
-                    <div class="meta">
-                        13th Dec
-                        <span class="lnr lnr-heart"></span> 15
-                        <span class="lnr lnr-bubble"></span> 04
-                    </div>
-                </div>							
-                <a href="#">
-                    <h4>When Your Meal Bites Back Tips For
-                    Avoiding Food Poisoning</h4>
-                </a>
-                <p>
-                    While some people really seem to have a knack for barbequing – always grilling up a perfect meal – for the rest of us, it is something that must be learned, not something that just comes naturally. Believe it or not, there is technique involved.
-                </p>
-            </div>												
-                                
-                                    
+            @endforeach
         </div>
-    </div>	
+        @endforeach
+    </div>
 </section>
 <!-- end blog Area -->
 @stop

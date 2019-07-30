@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:+CO2yz8oEaeMffEc9tlj9OF1QBHcJmi1e8clQwJ+PCA=',
+    'key' => 'base64:Fe4iIEtDFzweDkBB+XGm4m2YZTTsdnAyZSDFVMoImUk=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -188,7 +188,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\framework/cache/data',
+        'path' => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -304,12 +304,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\app',
+        'root' => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\app/public',
+        'root' => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -354,13 +354,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\logs/laravel.log',
+        'path' => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\logs/laravel.log',
+        'path' => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -424,7 +424,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\trung\\Desktop\\moonshop\\resources\\views/vendor/mail',
+        0 => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -512,7 +512,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\framework/sessions',
+    'files' => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -537,25 +537,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\trung\\Desktop\\moonshop\\resources\\views',
+      0 => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\framework\\views',
-  ),
-  'cart' => 
-  array (
-    'tax' => 21,
-    'database' => 
-    array (
-      'connection' => NULL,
-      'table' => 'shoppingcart',
-    ),
-    'destroy_on_logout' => false,
-    'format' => 
-    array (
-      'decimals' => 2,
-      'decimal_point' => '.',
-      'thousand_seperator' => ',',
-    ),
+    'compiled' => 'C:\\Server\\bin\\apache24\\htdocs\\banhtrungthugiatot\\storage\\framework\\views',
   ),
   'trustedproxy' => 
   array (

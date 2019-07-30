@@ -31,54 +31,25 @@
                     Xem chi tiết báo giá bên trên menu
                 </p>
             </div>
-        </div>								
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="single-cat-item">
-                    <div class="thumb">
-                        <img style="border-radius:0 !important;" class="img-fluid" src="{{asset('frontend/v2/img/c1.jpg')}}" alt="">
-                    </div>	
-                    <a href="#"><h4>Pizza</h4></a>
-                    <p>
-                        inappropriate behavior is often laughed off as “boys will be.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-cat-item">
-                    <div class="thumb">
-                        <img style="border-radius:0 !important;" class="img-fluid" src="{{asset('frontend/v2/img/c2.jpg')}}" alt="">
-                    </div>	
-                    <a href="#"><h4>Bread</h4></a>
-                    <p>
-                        inappropriate behavior is often laughed off as “boys will be.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-cat-item">
-                    <div class="thumb">
-                        <img style="border-radius:0 !important;" class="img-fluid" src="{{asset('frontend/v2/img/c3.jpg')}}" alt="">
-                    </div>	
-                    <a href="#"><h4>Burgers</h4></a>
-                    <p>
-                        inappropriate behavior is often laughed off as “boys will be.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-cat-item">
-                    <div class="thumb">
-                        <img style="border-radius:0 !important;" class="img-fluid" src="{{asset('frontend/v2/img/c4.jpg')}}" alt="">
-                    </div>	
-                    <a href="#"><h4>Chicken</h4></a>
-                    <p>
-                        inappropriate behavior is often laughed off as “boys will be.
-                    </p>
-                </div>
-            </div>																		
-            <a class="primary-btn mx-auto mt-80" href="#">View Full Menu</a>
         </div>
+        @foreach($products->chunk(4) as $p)	
+        <div class="row">
+            @foreach($p as $item)
+            <div class="col-lg-3 col-md-6">
+                <div class="single-cat-item">
+                    <div class="thumb">
+                        <img style="min-height:255px;border-radius:0 !important;" class="img-fluid" src="{{asset($item->feature_image)}}" alt="">
+                    </div>	
+                    <a href="#"><h4>{{$item->code}}</h4></a>
+                    <p>
+                        Giá: Liên hệ
+                    </p>
+                </div>
+            </div>
+            {{-- <a class="primary-btn mx-auto mt-80" href="#">View Full Menu</a> --}}
+            @endforeach
+        </div>
+        @endforeach
     </div>	
 </section>
 @stop
