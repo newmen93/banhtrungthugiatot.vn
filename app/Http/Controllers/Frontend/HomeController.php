@@ -3,30 +3,16 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Post;
 use App\Models\Price1;
 use App\Models\Price2;
-use App\Models\Product;
+use App\Modes\Product;
 
 class HomeController extends Controller
 {
     private static $itemsPerPage = 50;
+    private static $itemsOnHome = 3;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //$this->middleware('auth.frontend');
-    }
-    public function test($slug, $id)
-    {
-        $cate = Category::find(20);
-        dd($slug, $id);
-        return 'xxx';
-    }
     /**
      * Show the application dashboard.
      *
@@ -34,20 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $posts = Post::take(self::$itemsOnHome)->latest();
+        $products = Product::all();
         return view('frontend.v2.home');
-        // get product new
-        $newProducts = Product::whereIsNew(1)->paginate(self::$itemsPerPage);
-
-        // get product hot
-        $hotProducts = Product::whereIsHot(1)->paginate(self::$itemsPerPage);
-
-        // get product discount
-        $discountProducts = Product::whereIsDiscount(1)->paginate(self::$itemsPerPage);
-        return view('frontend.v1.home', [
-            'newProducts' => $newProducts,
-            'hotProducts' => $hotProducts,
-            'discountProducts' => $discountProducts,
-        ]);
     }
 
     # page menu navbar
