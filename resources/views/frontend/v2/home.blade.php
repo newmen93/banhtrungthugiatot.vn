@@ -28,8 +28,10 @@
                     Xem chi tiết báo giá bên trên menu
                 </p>
             </div>
-        </div>								
+        </div>
+
         <div class="row">
+            @foreach($products as $item)
             <div class="col-lg-3 col-md-6">
                 <div class="single-cat-item">
                     <div class="thumb">
@@ -41,7 +43,8 @@
                     </p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            @endforeach
+            {{-- <div class="col-lg-3 col-md-6">
                 <div class="single-cat-item">
                     <div class="thumb">
                         <img style="border-radius:0 !important;" class="img-fluid" src="{{asset('frontend/v2/img/c2.jpg')}}" alt="">
@@ -73,7 +76,7 @@
                         inappropriate behavior is often laughed off as “boys will be.
                     </p>
                 </div>
-            </div>																		
+            </div>																		 --}}
             <a class="primary-btn mx-auto mt-80" href="#">View Full Menu</a>
         </div>
     </div>	

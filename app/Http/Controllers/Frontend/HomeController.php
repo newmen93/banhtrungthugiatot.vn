@@ -21,8 +21,8 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::take(self::$itemsOnHome)->latest();
-        $products = Product::all();
-        return view('frontend.v2.home');
+        $products = Product::whereIsHome(1)->get();
+        return view('frontend.v2.home', ['posts' => $posts, 'products' => $products]);
     }
 
     # page menu navbar
@@ -51,6 +51,7 @@ class HomeController extends Controller
     }
     public function porudct()
     {
-        return view('frontend.v2.product.index');
+        $products = Product::all();
+        return view('frontend.v2.product.index', ['products' => $products]);
     }
 }

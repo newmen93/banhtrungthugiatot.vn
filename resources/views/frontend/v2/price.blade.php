@@ -89,7 +89,7 @@
                 <div class="single-menu-list row justify-content-between align-items-center text-center">
                     <div class="col-lg-12">
                         <a href="#"><h4>Nhấn vào nút bên dưới để tải báo giá về</h4></a>
-                        <a href="{{asset('BGia.pdf')}}" class="genric-btn info circle arrow">Tải về<span class="lnr lnr-arrow-down"></span></a>
+                        <a target="_blank" href="{{asset('BGia.pdf')}}" class="genric-btn info circle arrow">Tải về<span class="lnr lnr-arrow-down"></span></a>
                         
                     </div>
                 </div>
