@@ -35,6 +35,37 @@
         <link rel="stylesheet" href="{{asset('frontend/v2/css/jquery-ui.css')}}">			
         <link rel="stylesheet" href="{{asset('frontend/v2/css/owl.carousel.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/v2/css/main.css')}}">
+        <style>
+            .alogo span{
+                color:#C0392B;
+                line-height: 60px;
+                font-size: 55px;
+                font-family: arial;
+                font-weight: 700;
+            }
+            .nav-menu a{
+                font-size: 20px;
+                color:#C0392B;
+                font-family: sans-serif;
+                font-weight: 600;
+            }
+            header .btns {
+                font-weight: 600;
+            }
+            ::-moz-selection { /* Code for Firefox */
+                color: red !important;
+                background: yellow !important;
+            }
+            ::selection {
+                color: red !important;
+                background: yellow !important;
+            }
+            /* Make the image fully responsive */
+            .carousel-inner img {
+                width: 100%;
+                /*height: 100%;*/
+            }
+        </style>
         @stack('header')
     </head>
     <body>
@@ -51,8 +82,8 @@
                             </div>
                               </div>
                               <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
-                                <a class="btns" href="tel:+84 909 490 328">+84 909 490 328</a>
-                                  <a class="btns" href="mailto:kkuomissu@gmail.com">kkuomissu@gmail.com</a>		
+                                <a class="btns" href="tel:+84 909 490 328"><i class="fa fa-phone"></i> +84 909 490 328</a>
+                                  <a class="btns" href="mailto:kkuomissu@gmail.com"><i class="fa fa-envelope"></i> kkuomissu@gmail.com</a>		
                                   <a class="icons" href="tel:+84 909 490 328">
                                       <span class="lnr lnr-phone-handset"></span>
                                   </a>
@@ -65,9 +96,10 @@
                 </div>
                 <div class="container main-menu">
                     <div class="row align-items-center justify-content-between d-flex">
-                        <a href="{{route('home')}}"><img src="{{asset('frontend/v2/img/logo.png')}}" alt="" title="" /></a>		
+                    {{-- <img src="{{asset('frontend/v2/img/logo.png')}}" alt="" title="" /> --}}
+                        <a href="{{route('home')}}" class="alogo"><span>HỶ LÂM MÔN</span></span></a>		
                         <nav id="nav-menu-container">
-                            <ul class="nav-menu">
+                            <ul class="nav-menu rmenu">
                               <li class="menu-active"><a href="{{route('home')}}">Trang chủ</a></li>
                               <li><a href="{{route('about')}}">Giới thiệu</a></li>
                               <li><a href="{{route('price')}}">Báo giá</a></li>

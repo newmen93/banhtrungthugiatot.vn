@@ -188,7 +188,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\framework/cache/data',
+        'path' => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -304,12 +304,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\app',
+        'root' => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\app/public',
+        'root' => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -354,13 +354,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -424,7 +424,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\trung\\Desktop\\moonshop\\resources\\views/vendor/mail',
+        0 => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -512,7 +512,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\framework/sessions',
+    'files' => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -537,9 +537,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\trung\\Desktop\\moonshop\\resources\\views',
+      0 => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\trung\\Desktop\\moonshop\\storage\\framework\\views',
+    'compiled' => 'C:\\Users\\trung\\Desktop\\banhtrungthugiatot\\storage\\framework\\views',
   ),
   'cart' => 
   array (

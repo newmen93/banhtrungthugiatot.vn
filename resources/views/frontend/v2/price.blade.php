@@ -28,16 +28,17 @@
                   <li class="nav-item">
                     <a class="nav-link active" id="pizza-tab" data-toggle="pill" href="#pizza" role="tab" aria-controls="pizza" aria-selected="true">Bảng giá</a>
                   </li>
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                     <a class="nav-link" id="pills-burger-tab" data-toggle="pill" href="#pills-burger" role="tab" aria-controls="pills-burger" aria-selected="false">Tải về</a>
-                  </li>
+                  </li> --}}
                 </ul>
             </div>
         </div>
         <div id="pills-tabContent" class="tab-content absolute">
             <div class="tab-pane fade show active" id="pizza" role="tabpanel" aria-labelledby="pizza-tab">
                 <div class="single-menu-list row justify-content-between align-items-center">
-                    <table class="table">
+                    <embed src="{{ asset('BGia.pdf') }}" width="100%" height="3500" alt="pdf" />
+                    {{-- <table class="table">
                         <thead class="thead" style="background: #ab4444; border-color:#000; color: #000">
                           <tr>
                             <th scope="col">MS</th>
@@ -82,7 +83,7 @@
                                 </tr>
                                 @endforeach
                         </tbody>
-                      </table>
+                      </table> --}}
                 </div>
             </div>
               <div class="tab-pane fade" id="pills-burger" role="tabpanel" aria-labelledby="pills-burger-tab">

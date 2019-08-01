@@ -7,10 +7,43 @@
     <div class="container">				
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
-                <h1 class="text-white">
+                {{-- <h1 class="text-white">
                     Bánh trung thu 2019
-                </h1>	
-                <p class="text-white link-nav"><a href="{{route('home')}}">Mùa bánh trung thu 2019</a></p>
+                </h1>	 --}}
+                {{-- <p class="text-white link-nav"><a href="{{route('home')}}">Mùa bánh trung thu 2019</a></p> --}}
+                 
+               <div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{asset('products/H1.jpg')}}" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('products/H4.jpg')}}" alt="Chicago" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('products/H6.jpg')}}" alt="New York" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+  
+                    
             </div>	
         </div>
     </div>
@@ -41,6 +74,7 @@
                     <p>
                         {{'Giá: Liên hệ'}}
                     </p>
+                   
                 </div>
             </div>
             @endforeach
