@@ -65,6 +65,10 @@
                 width: 100%;
                 /*height: 100%;*/
             }
+            .header-top .header-top-right a{
+                font-size: 20px;
+                font-weight: 600;
+            }
         </style>
         @stack('header')
     </head>
